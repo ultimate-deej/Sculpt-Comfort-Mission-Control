@@ -1,0 +1,318 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		178DF6201B503D7F005EB6C5 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 178DF61F1B503D7F005EB6C5 /* main.m */; };
+		17F4D2101B506CAE0060D8A4 /* Sculpt Control Inject Bundle.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 17F4D20E1B506C8D0060D8A4 /* Sculpt Control Inject Bundle.bundle */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		17F4D20D1B506C8D0060D8A4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 17F4D2091B506C8D0060D8A4 /* Sculpt Control Inject Bundle.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 17F4D1FF1B506C8D0060D8A4;
+			remoteInfo = "Sculpt Control Inject Bundle";
+		};
+		17F4D21A1B5095610060D8A4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 17F4D2091B506C8D0060D8A4 /* Sculpt Control Inject Bundle.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 17F4D1FE1B506C8D0060D8A4;
+			remoteInfo = "Sculpt Control Inject Bundle";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		178DF6171B503D7F005EB6C5 /* Sculpt Comfort Mission Control.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Sculpt Comfort Mission Control.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		178DF61B1B503D7F005EB6C5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		178DF61F1B503D7F005EB6C5 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		17F4D2091B506C8D0060D8A4 /* Sculpt Control Inject Bundle.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = "Sculpt Control Inject Bundle.xcodeproj"; path = "Sculpt Control Inject Bundle/Sculpt Control Inject Bundle.xcodeproj"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		178DF6141B503D7F005EB6C5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		178DF60E1B503D7F005EB6C5 = {
+			isa = PBXGroup;
+			children = (
+				17F4D2091B506C8D0060D8A4 /* Sculpt Control Inject Bundle.xcodeproj */,
+				178DF6191B503D7F005EB6C5 /* Sculpt Comfort Mission Control */,
+				178DF6181B503D7F005EB6C5 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		178DF6181B503D7F005EB6C5 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				178DF6171B503D7F005EB6C5 /* Sculpt Comfort Mission Control.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		178DF6191B503D7F005EB6C5 /* Sculpt Comfort Mission Control */ = {
+			isa = PBXGroup;
+			children = (
+				178DF61F1B503D7F005EB6C5 /* main.m */,
+				178DF61A1B503D7F005EB6C5 /* Supporting Files */,
+			);
+			path = "Sculpt Comfort Mission Control";
+			sourceTree = "<group>";
+		};
+		178DF61A1B503D7F005EB6C5 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				178DF61B1B503D7F005EB6C5 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		17F4D20A1B506C8D0060D8A4 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				17F4D20E1B506C8D0060D8A4 /* Sculpt Control Inject Bundle.bundle */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		178DF6161B503D7F005EB6C5 /* Sculpt Comfort Mission Control */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 178DF6341B503D7F005EB6C5 /* Build configuration list for PBXNativeTarget "Sculpt Comfort Mission Control" */;
+			buildPhases = (
+				178DF6131B503D7F005EB6C5 /* Sources */,
+				178DF6141B503D7F005EB6C5 /* Frameworks */,
+				178DF6151B503D7F005EB6C5 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				17F4D21B1B5095610060D8A4 /* PBXTargetDependency */,
+			);
+			name = "Sculpt Comfort Mission Control";
+			productName = "Sculpt Comfort Mission Control";
+			productReference = 178DF6171B503D7F005EB6C5 /* Sculpt Comfort Mission Control.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		178DF60F1B503D7F005EB6C5 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0640;
+				ORGANIZATIONNAME = "Maxim Naumov";
+				TargetAttributes = {
+					178DF6161B503D7F005EB6C5 = {
+						CreatedOnToolsVersion = 6.4;
+					};
+				};
+			};
+			buildConfigurationList = 178DF6121B503D7F005EB6C5 /* Build configuration list for PBXProject "Sculpt Comfort Mission Control" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 178DF60E1B503D7F005EB6C5;
+			productRefGroup = 178DF6181B503D7F005EB6C5 /* Products */;
+			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 17F4D20A1B506C8D0060D8A4 /* Products */;
+					ProjectRef = 17F4D2091B506C8D0060D8A4 /* Sculpt Control Inject Bundle.xcodeproj */;
+				},
+			);
+			projectRoot = "";
+			targets = (
+				178DF6161B503D7F005EB6C5 /* Sculpt Comfort Mission Control */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		17F4D20E1B506C8D0060D8A4 /* Sculpt Control Inject Bundle.bundle */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = "Sculpt Control Inject Bundle.bundle";
+			remoteRef = 17F4D20D1B506C8D0060D8A4 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
+
+/* Begin PBXResourcesBuildPhase section */
+		178DF6151B503D7F005EB6C5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				17F4D2101B506CAE0060D8A4 /* Sculpt Control Inject Bundle.bundle in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		178DF6131B503D7F005EB6C5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				178DF6201B503D7F005EB6C5 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		17F4D21B1B5095610060D8A4 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "Sculpt Control Inject Bundle";
+			targetProxy = 17F4D21A1B5095610060D8A4 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		178DF6321B503D7F005EB6C5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		178DF6331B503D7F005EB6C5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		178DF6351B503D7F005EB6C5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = "Sculpt Comfort Mission Control/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		178DF6361B503D7F005EB6C5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = "Sculpt Comfort Mission Control/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		178DF6121B503D7F005EB6C5 /* Build configuration list for PBXProject "Sculpt Comfort Mission Control" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				178DF6321B503D7F005EB6C5 /* Debug */,
+				178DF6331B503D7F005EB6C5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		178DF6341B503D7F005EB6C5 /* Build configuration list for PBXNativeTarget "Sculpt Comfort Mission Control" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				178DF6351B503D7F005EB6C5 /* Debug */,
+				178DF6361B503D7F005EB6C5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 178DF60F1B503D7F005EB6C5 /* Project object */;
+}
