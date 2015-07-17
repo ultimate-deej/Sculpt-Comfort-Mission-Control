@@ -10,10 +10,18 @@
 
 @import IOKit.hid;
 
-typedef NS_ENUM(uint32_t, ButtonCode) {
-    ButtonCodeClick = 64817,
-    ButtonCodeSwipeUp = 64809,
-    ButtonCodeSwipeDown = 64816,
+typedef uint32_t ButtonCode;
+
+typedef NS_ENUM(ButtonCode, ButtonCodeV1) {
+    ButtonCodeV1Click = 64817,
+    ButtonCodeV1SwipeUp = 64809,
+    ButtonCodeV1SwipeDown = 64816,
+};
+
+typedef NS_ENUM(ButtonCode, ButtonCodeV2) {
+    ButtonCodeV2Click = 227,
+    ButtonCodeV2SwipeUp = 42,
+    ButtonCodeV2SwipeDown = 43,
 };
 
 typedef NS_ENUM(NSInteger, LongClickState) {
@@ -64,7 +72,7 @@ static void MouseCallback(void *context, IOReturn result, void *sender, IOHIDVal
     IOHIDElementRef elem = IOHIDValueGetElement(value);
     ButtonCode code = IOHIDElementGetUsage(elem);
 
-    if (code == ButtonCodeClick) {
+    if (code == ButtonCodeV1Click || code == ButtonCodeV2Click) {
         HandleLongClick(listener, pressed == 1);
         return;
     }
@@ -72,10 +80,12 @@ static void MouseCallback(void *context, IOReturn result, void *sender, IOHIDVal
     if (pressed != 1) return;
 
     switch (code) {
-        case ButtonCodeSwipeUp:
+        case ButtonCodeV1SwipeUp:
+        case ButtonCodeV2SwipeUp:
             listener.swipeUpAction();
             break;
-        case ButtonCodeSwipeDown:
+        case ButtonCodeV1SwipeDown:
+        case ButtonCodeV2SwipeDown:
             listener.swipeDownAction();
             break;
         default:
