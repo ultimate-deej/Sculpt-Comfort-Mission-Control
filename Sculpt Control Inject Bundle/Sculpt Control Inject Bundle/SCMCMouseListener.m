@@ -11,9 +11,9 @@
 @import IOKit.hid;
 
 typedef NS_ENUM(uint32_t, ButtonCode) {
-    ButtonCodeClick = 64817,
-    ButtonCodeSwipeUp = 64809,
-    ButtonCodeSwipeDown = 64816,
+    ButtonCodeClick = 227,
+    ButtonCodeSwipeUp = 42,
+    ButtonCodeSwipeDown = 43,
 };
 
 typedef NS_ENUM(NSInteger, LongClickState) {
