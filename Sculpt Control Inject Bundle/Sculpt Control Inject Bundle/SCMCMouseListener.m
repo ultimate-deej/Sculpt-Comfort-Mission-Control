@@ -41,6 +41,7 @@ typedef NS_ENUM(NSInteger, LongClickState) {
 
 static LongClickState ClickState;
 static NSTimer *LongClickTimer;
+static NSTimeInterval LongClickDuration;
 
 static void HandleLongClick(__weak SCMCMouseListener *listener, BOOL down) {
     if (!down) { // button released
@@ -53,7 +54,7 @@ static void HandleLongClick(__weak SCMCMouseListener *listener, BOOL down) {
 
         ClickState = IdleLongClickState;
     } else if (ClickState == IdleLongClickState) {
-        LongClickTimer = [NSTimer scheduledTimerWithTimeInterval:0.2
+        LongClickTimer = [NSTimer scheduledTimerWithTimeInterval:LongClickDuration
                 target:[NSBlockOperation blockOperationWithBlock:^{
                     listener.longClickAction();
                     ClickState = WaitingReleaseLongClickState;
@@ -103,6 +104,7 @@ static void MouseCallback(void *context, IOReturn result, void *sender, IOHIDVal
         self.swipeUpAction = swipeUpAction;
         self.swipeDownAction = swipeDownAction;
         [self setupListener];
+        LongClickDuration = [[NSBundle bundleForClass:[self class]].infoDictionary[@"SCMCLongClickDuration"] doubleValue];
     }
 
     return self;

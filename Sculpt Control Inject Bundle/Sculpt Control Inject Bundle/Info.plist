@@ -24,5 +24,7 @@
 	<string>Copyright © 2015 Maxim Naumov. All rights reserved.</string>
 	<key>NSPrincipalClass</key>
 	<string></string>
+	<key>SCMCLongClickDuration</key>
+	<real>0.2</real>
 </dict>
 </plist>
