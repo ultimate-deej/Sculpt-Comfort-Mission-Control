@@ -121,7 +121,7 @@ static void MouseCallback(void *context, IOReturn result, void *sender, IOHIDVal
             @kIOHIDProductIDKey : @0x7A2,
     };
 
-    IOHIDManagerSetDeviceMatchingMultiple(hidManager, (__bridge CFArrayRef) @[sculptComfortMatch]);
+    IOHIDManagerSetDeviceMatching(hidManager, (__bridge CFDictionaryRef) sculptComfortMatch);
     IOHIDManagerRegisterInputValueCallback(hidManager, MouseCallback, (__bridge void *) (self));
     IOHIDManagerScheduleWithRunLoop(hidManager, CFRunLoopGetMain(), kCFRunLoopDefaultMode);
     IOHIDManagerOpen(hidManager, kIOHIDOptionsTypeNone);
