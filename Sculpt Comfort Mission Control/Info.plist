@@ -30,7 +30,5 @@
 	<string>Copyright © 2015 Maxim Naumov. All rights reserved.</string>
 	<key>NSPrincipalClass</key>
 	<string>NSApplication</string>
-	<key>SCMCLldbTimeout</key>
-	<integer>120</integer>
 </dict>
 </plist>

@@ -21,8 +21,7 @@ int main(int argc, const char *argv[]) {
             @"-o", @"quit",
     ]];
     // Wait for lldb for a limited amount of time
-    NSTimeInterval lldbTimeout = [[NSBundle mainBundle].infoDictionary[@"SCMCLldbTimeout"] doubleValue];
-    NSTimer *killTimer = [NSTimer scheduledTimerWithTimeInterval:lldbTimeout
+    NSTimer *killTimer = [NSTimer scheduledTimerWithTimeInterval:15
             target:[NSBlockOperation blockOperationWithBlock:^{
                 [lldbTask terminate];
 
