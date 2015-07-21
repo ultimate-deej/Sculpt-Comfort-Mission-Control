@@ -8,9 +8,7 @@
 
 #import <Cocoa/Cocoa.h>
 
-int main(int argc, const char *argv[]) {
-    NSApplicationLoad(); // Just to show dock icon
-
+static BOOL InjectWithTimeout(NSTimeInterval timeout) {
     // Make Dock load the bundle
     NSString *injectBundlePath = [[NSBundle mainBundle] pathForResource:@"Sculpt Control Inject Bundle" ofType:@"bundle"];
     NSString *injectCommand = [NSString stringWithFormat:@"expr (char)[[NSBundle bundleWithPath:@\"%@\"] load]", injectBundlePath];
@@ -21,21 +19,36 @@ int main(int argc, const char *argv[]) {
             @"-o", @"quit",
     ]];
     // Wait for lldb for a limited amount of time
-    NSTimer *killTimer = [NSTimer scheduledTimerWithTimeInterval:15
+    NSTimer *killTimer = [NSTimer scheduledTimerWithTimeInterval:timeout
             target:[NSBlockOperation blockOperationWithBlock:^{
                 [lldbTask terminate];
-
-                NSAlert *alert = [NSAlert new];
-                alert.messageText = @"Could not start";
-                [alert runModal];
             }]
             selector:@selector(main)
             userInfo:nil
             repeats:NO
     ];
     [lldbTask waitUntilExit];
+    BOOL result = killTimer.isValid;
     [killTimer invalidate];
-    return 0;
+    return result;
+}
+
+int main(int argc, const char *argv[]) {
+    NSApplicationLoad(); // Just to show dock icon
+
+    int retryCount = 4;
+    NSTimeInterval retryInterval = 10;
+    NSTimeInterval retryIntervalIncrement = 15;
+    for (int i = 0; i < retryCount; ++i, retryInterval += retryIntervalIncrement) {
+        if (InjectWithTimeout(retryInterval)) {
+            return 0;
+        }
+    }
+
+    NSAlert *alert = [NSAlert new];
+    alert.messageText = @"Could not start";
+    [alert runModal];
+    return 1;
 
     // Now that the app is closed ApplicationDiedInterceptor is triggered
 }
