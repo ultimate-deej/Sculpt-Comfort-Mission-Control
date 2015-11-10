@@ -13,14 +13,14 @@
 
 static SCMCMouseListener *MouseListener;
 
-static void (*ApplicationDied_orig)(id self, SEL _cmd, int arg);
+static void (*ApplicationDied_orig)(WVSpaces *self, SEL _cmd, int arg);
 
-static void ApplicationDiedInterceptor(id self, SEL _cmd, int arg) {
+static void ApplicationDiedInterceptor(WVSpaces *self, SEL _cmd, int arg) {
     ApplicationDied_orig(self, _cmd, arg);
 
     // self is the desired instance of WVSpaces
     // Use it to create a mouse listener
-    __weak id spaces = self;
+    __weak typeof(self) spaces = self;
     MouseListener = [SCMCMouseListener listenerWithClickAction:^{
         [[NSWorkspace sharedWorkspace] launchApplication:@"Mission Control"];
     } longClickAction:^{
