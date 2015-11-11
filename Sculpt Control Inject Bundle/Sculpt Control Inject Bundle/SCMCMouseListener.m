@@ -33,10 +33,10 @@ typedef NS_ENUM(NSInteger, LongClickState) {
 
 @interface SCMCMouseListener ()
 
-@property(nonatomic, copy) void (^clickAction)();
-@property(nonatomic, copy) void (^longClickAction)();
-@property(nonatomic, copy) void (^swipeUpAction)();
-@property(nonatomic, copy) void (^swipeDownAction)();
+@property(nonatomic, copy) SCMCAction clickAction;
+@property(nonatomic, copy) SCMCAction longClickAction;
+@property(nonatomic, copy) SCMCAction swipeUpAction;
+@property(nonatomic, copy) SCMCAction swipeDownAction;
 
 @end
 
