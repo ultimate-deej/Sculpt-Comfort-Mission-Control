@@ -82,17 +82,18 @@ static void MouseCallback(void *context, IOReturn result, void *sender, IOHIDVal
     }
 }
 
-- (instancetype)initWithConfiguration:(SCMCConfiguration *)configuration clickAction:(SCMCAction)clickAction longClickAction:(SCMCAction)longClickAction swipeUpAction:(SCMCAction)swipeUpAction swipeDownAction:(SCMCAction)swipeDownAction {
+- (instancetype)initWithConfiguration:(SCMCConfiguration *)configuration {
     self = [super init];
     if (self) {
         _clickCode = (ButtonCode) configuration.clickCode;
         _swipeUpCode = (ButtonCode) configuration.swipeUpCode;
         _swipeDownCode = (ButtonCode) configuration.swipeDownCode;
 
-        self.clickAction = clickAction;
-        self.longClickAction = longClickAction;
-        self.swipeUpAction = swipeUpAction;
-        self.swipeDownAction = swipeDownAction;
+        self.clickAction = configuration.clickAction;
+        self.longClickAction = configuration.longClickAction;
+        self.swipeUpAction = configuration.swipeUpAction;
+        self.swipeDownAction = configuration.swipeDownAction;
+        
         [self setupListenerWithConfiguration:configuration];
         LongClickDuration = [[NSBundle bundleForClass:[self class]].infoDictionary[@"SCMCLongClickDuration"] doubleValue];
     }
@@ -100,8 +101,8 @@ static void MouseCallback(void *context, IOReturn result, void *sender, IOHIDVal
     return self;
 }
 
-+ (instancetype)listenerWithConfiguration:(SCMCConfiguration *)configuration clickAction:(SCMCAction)clickAction longClickAction:(SCMCAction)longClickAction swipeUpAction:(SCMCAction)swipeUpAction swipeDownAction:(SCMCAction)swipeDownAction {
-    return [[self alloc] initWithConfiguration:configuration clickAction:clickAction longClickAction:longClickAction swipeUpAction:swipeUpAction swipeDownAction:swipeDownAction];
++ (instancetype)listenerWithConfiguration:(SCMCConfiguration *)configuration {
+    return [[self alloc] initWithConfiguration:configuration];
 }
 
 - (void)setupListenerWithConfiguration:(SCMCConfiguration *)configuration {

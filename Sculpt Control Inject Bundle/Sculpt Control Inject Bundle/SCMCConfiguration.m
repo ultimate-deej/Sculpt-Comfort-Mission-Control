@@ -17,6 +17,22 @@ static NSString *const ClickCodeKey = @"click-code";
 static NSString *const SwipeUpCodeKey = @"swipe-up-code";
 static NSString *const SwipeDownCodeKey = @"swipe-down-code";
 
+static NSString *const ClickActionKey = @"click-action";
+static NSString *const LongClickActionKey = @"long-click-action";
+static NSString *const SwipeUpActionKey = @"swipe-up-action";
+static NSString *const SwipeDownActionKey = @"swipe-down-action";
+
+static NSString *const MissionControlActionName = @"mission-control";
+static NSString *const ApplicationWindowsActionName = @"application-windows";
+static NSString *const NextSpaceActionName = @"next-space";
+static NSString *const PreviousSpaceActionName = @"previous-space";
+
+@interface SCMCConfiguration ()
+
+@property(nonatomic, readonly) NSDictionary *actionsByName;
+
+@end
+
 @implementation SCMCConfiguration
 
 static NSDictionary *Configuration(void) {
@@ -32,8 +48,26 @@ static NSDictionary *Configuration(void) {
             ClickCodeKey : @64817,
             SwipeUpCodeKey : @64809,
             SwipeDownCodeKey : @64816,
+
+            ClickActionKey : MissionControlActionName,
+            LongClickActionKey : ApplicationWindowsActionName,
+            SwipeUpActionKey : NextSpaceActionName,
+            SwipeDownActionKey : PreviousSpaceActionName,
         },
     }];
+}
+
+- (instancetype)initWithActions:(SCMCActions *)actions {
+    if (nil == (self = [super init])) return nil;
+
+    _actionsByName = @{
+        MissionControlActionName : actions.missionControl,
+        ApplicationWindowsActionName : actions.applicationWindows,
+        NextSpaceActionName : actions.nextSpace,
+        PreviousSpaceActionName : actions.previousSpace,
+    };
+
+    return self;
 }
 
 #pragma mark - Properties
@@ -56,6 +90,26 @@ static NSDictionary *Configuration(void) {
 
 - (NSInteger)swipeDownCode {
     return [Configuration()[SwipeDownCodeKey] integerValue];
+}
+
+- (SCMCAction)clickAction {
+    NSString *actionName = Configuration()[ClickActionKey];
+    return self.actionsByName[actionName];
+}
+
+- (SCMCAction)longClickAction {
+    NSString *actionName = Configuration()[LongClickActionKey];
+    return self.actionsByName[actionName];
+}
+
+- (SCMCAction)swipeUpAction {
+    NSString *actionName = Configuration()[SwipeUpActionKey];
+    return self.actionsByName[actionName];
+}
+
+- (SCMCAction)swipeDownAction {
+    NSString *actionName = Configuration()[SwipeDownActionKey];
+    return self.actionsByName[actionName];
 }
 
 @end

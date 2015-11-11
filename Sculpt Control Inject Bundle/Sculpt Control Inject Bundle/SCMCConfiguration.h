@@ -7,8 +7,14 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "SCMCActions.h"
 
 @interface SCMCConfiguration : NSObject
+
++ (instancetype)new NS_UNAVAILABLE;
+- (instancetype)init NS_UNAVAILABLE;
+
+- (instancetype)initWithActions:(SCMCActions *)actions;
 
 @property(nonatomic, readonly) NSNumber *vendorId;
 @property(nonatomic, readonly) NSNumber *productId;
@@ -16,5 +22,10 @@
 @property(nonatomic, readonly) NSInteger clickCode;
 @property(nonatomic, readonly) NSInteger swipeUpCode;
 @property(nonatomic, readonly) NSInteger swipeDownCode;
+
+@property(nonatomic, readonly) SCMCAction clickAction;
+@property(nonatomic, readonly) SCMCAction longClickAction;
+@property(nonatomic, readonly) SCMCAction swipeUpAction;
+@property(nonatomic, readonly) SCMCAction swipeDownAction;
 
 @end

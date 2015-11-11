@@ -23,11 +23,8 @@ static void ApplicationDiedInterceptor(WVSpaces *self, SEL _cmd, int arg) {
     // self is the desired instance of WVSpaces
     // Use it to create a mouse listener
     SCMCActions *actions = [[SCMCActions alloc] initWithSpaces:self];
-    MouseListener = [SCMCMouseListener listenerWithConfiguration:[SCMCConfiguration new]
-                                                     clickAction:actions.missionControl
-                                                 longClickAction:actions.applicationWindows
-                                                   swipeUpAction:actions.nextSpace
-                                                 swipeDownAction:actions.previousSpace];
+    SCMCConfiguration *configuration = [[SCMCConfiguration alloc] initWithActions:actions];
+    MouseListener = [SCMCMouseListener listenerWithConfiguration:configuration];
 
     // Restore applicationDied: method
     Class spacesClass = objc_getClass("WVSpaces");
