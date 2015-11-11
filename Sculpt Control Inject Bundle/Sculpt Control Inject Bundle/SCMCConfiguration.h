@@ -15,4 +15,8 @@
 @property(nonatomic, readonly) NSNumber *vendorId;
 @property(nonatomic, readonly) NSNumber *productId;
 
+@property(nonatomic, readonly) NSInteger clickCode;
+@property(nonatomic, readonly) NSInteger swipeUpCode;
+@property(nonatomic, readonly) NSInteger swipeDownCode;
+
 @end

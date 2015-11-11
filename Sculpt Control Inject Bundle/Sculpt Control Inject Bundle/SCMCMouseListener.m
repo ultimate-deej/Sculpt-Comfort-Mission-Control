@@ -13,18 +13,6 @@
 
 typedef uint32_t ButtonCode;
 
-typedef NS_ENUM(ButtonCode, ButtonCodeV1) {
-    ButtonCodeV1Click = 64817,
-    ButtonCodeV1SwipeUp = 64809,
-    ButtonCodeV1SwipeDown = 64816,
-};
-
-typedef NS_ENUM(ButtonCode, ButtonCodeV2) {
-    ButtonCodeV2Click = 227,
-    ButtonCodeV2SwipeUp = 42,
-    ButtonCodeV2SwipeDown = 43,
-};
-
 typedef NS_ENUM(NSInteger, LongClickState) {
     IdleLongClickState,
     DownLongClickState,
@@ -33,12 +21,18 @@ typedef NS_ENUM(NSInteger, LongClickState) {
 
 @interface SCMCMouseListener ()
 
+@property(nonatomic, readonly) ButtonCode clickCode;
+@property(nonatomic, readonly) ButtonCode swipeUpCode;
+@property(nonatomic, readonly) ButtonCode swipeDownCode;
+
 @property(nonatomic, copy) SCMCAction clickAction;
 @property(nonatomic, copy) SCMCAction longClickAction;
 @property(nonatomic, copy) SCMCAction swipeUpAction;
 @property(nonatomic, copy) SCMCAction swipeDownAction;
 
 @end
+
+@implementation SCMCMouseListener
 
 static LongClickState ClickState;
 static NSTimer *LongClickTimer;
@@ -72,34 +66,29 @@ static void MouseCallback(void *context, IOReturn result, void *sender, IOHIDVal
     SCMCMouseListener *listener = (__bridge SCMCMouseListener *) (context);
     long pressed = IOHIDValueGetIntegerValue(value);
     IOHIDElementRef elem = IOHIDValueGetElement(value);
-    ButtonCode code = IOHIDElementGetUsage(elem);
+    const ButtonCode code = IOHIDElementGetUsage(elem);
 
-    if (code == ButtonCodeV1Click || code == ButtonCodeV2Click) {
+    if (code == listener->_clickCode) {
         HandleLongClick(listener, pressed == 1);
         return;
     }
 
     if (pressed != 1) return;
 
-    switch (code) {
-        case ButtonCodeV1SwipeUp:
-        case ButtonCodeV2SwipeUp:
-            listener.swipeUpAction();
-            break;
-        case ButtonCodeV1SwipeDown:
-        case ButtonCodeV2SwipeDown:
-            listener.swipeDownAction();
-            break;
-        default:
-            return;
+    if (code == listener->_swipeUpCode) {
+        listener.swipeUpAction();
+    } else if (code == listener->_swipeDownCode) {
+        listener.swipeDownAction();
     }
 }
-
-@implementation SCMCMouseListener
 
 - (instancetype)initWithClickAction:(SCMCAction)clickAction longClickAction:(SCMCAction)longClickAction swipeUpAction:(SCMCAction)swipeUpAction swipeDownAction:(SCMCAction)swipeDownAction {
     self = [super init];
     if (self) {
+        _clickCode = (ButtonCode) [SCMCConfiguration sharedInstance].clickCode;
+        _swipeUpCode = (ButtonCode) [SCMCConfiguration sharedInstance].swipeUpCode;
+        _swipeDownCode = (ButtonCode) [SCMCConfiguration sharedInstance].swipeDownCode;
+
         self.clickAction = clickAction;
         self.longClickAction = longClickAction;
         self.swipeUpAction = swipeUpAction;
