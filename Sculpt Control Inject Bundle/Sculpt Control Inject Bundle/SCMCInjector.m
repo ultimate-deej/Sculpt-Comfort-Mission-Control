@@ -46,8 +46,8 @@ static void ApplicationDiedInterceptor(WVSpaces *self, SEL _cmd, int arg) {
 + (void)load {
     Class spacesClass = objc_getClass("WVSpaces");
     Method applicationDiedMethod = class_getInstanceMethod(spacesClass, @selector(applicationDied:));
-    ApplicationDied_orig = (void *) method_getImplementation(applicationDiedMethod);
-    method_setImplementation(applicationDiedMethod, (IMP) ApplicationDiedInterceptor);
+    ApplicationDied_orig = (typeof(ApplicationDied_orig)) method_getImplementation(applicationDiedMethod);
+    ApplicationDied_orig = (typeof(ApplicationDied_orig)) method_setImplementation(applicationDiedMethod, (IMP) ApplicationDiedInterceptor);
 }
 
 @end
