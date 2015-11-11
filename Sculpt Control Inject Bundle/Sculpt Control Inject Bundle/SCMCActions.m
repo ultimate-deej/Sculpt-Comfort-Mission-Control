@@ -39,6 +39,14 @@
     };
 }
 
+- (SCMCAction)showDesktop {
+    return ^{
+        NSString *missionControlPath = [[NSWorkspace sharedWorkspace] fullPathForApplication:@"Mission Control"];
+        NSURL *missionControlUrl = [NSURL fileURLWithPath:missionControlPath];
+        [[NSWorkspace sharedWorkspace] launchApplicationAtURL:missionControlUrl options:NSWorkspaceLaunchDefault configuration:@{NSWorkspaceLaunchConfigurationArguments : @[@"1"]} error:nil];
+    };
+}
+
 - (SCMCAction)nextSpace {
     return ^{
         [self.spaces switchToNextSpace:YES];

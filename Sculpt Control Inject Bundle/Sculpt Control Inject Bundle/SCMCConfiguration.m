@@ -24,6 +24,7 @@ static NSString *const SwipeDownActionKey = @"swipe-down-action";
 
 static NSString *const MissionControlActionName = @"mission-control";
 static NSString *const ApplicationWindowsActionName = @"application-windows";
+static NSString *const ShowDesktopActionName = @"show-desktop";
 static NSString *const NextSpaceActionName = @"next-space";
 static NSString *const PreviousSpaceActionName = @"previous-space";
 
@@ -63,6 +64,7 @@ static NSDictionary *Configuration(void) {
     _actionsByName = @{
         MissionControlActionName : actions.missionControl,
         ApplicationWindowsActionName : actions.applicationWindows,
+        ShowDesktopActionName : actions.showDesktop,
         NextSpaceActionName : actions.nextSpace,
         PreviousSpaceActionName : actions.previousSpace,
     };
