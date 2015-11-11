@@ -7,11 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		17D3F8831BF2BA5300C7EB97 /* SCMCActions.m in Sources */ = {isa = PBXBuildFile; fileRef = 17D3F8821BF2BA5300C7EB97 /* SCMCActions.m */; };
 		17F4D2181B5090060060D8A4 /* SCMCInjector.m in Sources */ = {isa = PBXBuildFile; fileRef = 17F4D2171B5090060060D8A4 /* SCMCInjector.m */; };
 		17F4D21E1B5098770060D8A4 /* SCMCMouseListener.m in Sources */ = {isa = PBXBuildFile; fileRef = 17F4D21D1B5098770060D8A4 /* SCMCMouseListener.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		17D3F8811BF2BA5300C7EB97 /* SCMCActions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCMCActions.h; sourceTree = "<group>"; };
+		17D3F8821BF2BA5300C7EB97 /* SCMCActions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCMCActions.m; sourceTree = "<group>"; };
 		17F4D1FF1B506C8D0060D8A4 /* Sculpt Control Inject Bundle.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Sculpt Control Inject Bundle.bundle"; sourceTree = BUILT_PRODUCTS_DIR; };
 		17F4D2031B506C8D0060D8A4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		17F4D2161B5090060060D8A4 /* SCMCInjector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCMCInjector.h; sourceTree = "<group>"; };
@@ -57,6 +60,8 @@
 				17F4D2171B5090060060D8A4 /* SCMCInjector.m */,
 				17F4D21C1B5098770060D8A4 /* SCMCMouseListener.h */,
 				17F4D21D1B5098770060D8A4 /* SCMCMouseListener.m */,
+				17D3F8811BF2BA5300C7EB97 /* SCMCActions.h */,
+				17D3F8821BF2BA5300C7EB97 /* SCMCActions.m */,
 			);
 			path = "Sculpt Control Inject Bundle";
 			sourceTree = "<group>";
@@ -136,6 +141,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				17F4D21E1B5098770060D8A4 /* SCMCMouseListener.m in Sources */,
+				17D3F8831BF2BA5300C7EB97 /* SCMCActions.m in Sources */,
 				17F4D2181B5090060060D8A4 /* SCMCInjector.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
