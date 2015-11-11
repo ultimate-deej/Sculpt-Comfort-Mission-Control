@@ -10,8 +10,6 @@
 
 @interface SCMCConfiguration : NSObject
 
-+ (instancetype)sharedInstance;
-
 @property(nonatomic, readonly) NSNumber *vendorId;
 @property(nonatomic, readonly) NSNumber *productId;
 

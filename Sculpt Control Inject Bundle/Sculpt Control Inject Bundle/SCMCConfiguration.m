@@ -36,15 +36,6 @@ static NSDictionary *Configuration(void) {
     }];
 }
 
-+ (instancetype)sharedInstance {
-    static SCMCConfiguration *singleton;
-    static dispatch_once_t onceToken;
-    dispatch_once(&onceToken, ^{
-        singleton = [SCMCConfiguration new];
-    });
-    return singleton;
-}
-
 #pragma mark - Properties
 
 - (NSNumber *)vendorId {

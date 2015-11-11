@@ -82,33 +82,33 @@ static void MouseCallback(void *context, IOReturn result, void *sender, IOHIDVal
     }
 }
 
-- (instancetype)initWithClickAction:(SCMCAction)clickAction longClickAction:(SCMCAction)longClickAction swipeUpAction:(SCMCAction)swipeUpAction swipeDownAction:(SCMCAction)swipeDownAction {
+- (instancetype)initWithConfiguration:(SCMCConfiguration *)configuration clickAction:(SCMCAction)clickAction longClickAction:(SCMCAction)longClickAction swipeUpAction:(SCMCAction)swipeUpAction swipeDownAction:(SCMCAction)swipeDownAction {
     self = [super init];
     if (self) {
-        _clickCode = (ButtonCode) [SCMCConfiguration sharedInstance].clickCode;
-        _swipeUpCode = (ButtonCode) [SCMCConfiguration sharedInstance].swipeUpCode;
-        _swipeDownCode = (ButtonCode) [SCMCConfiguration sharedInstance].swipeDownCode;
+        _clickCode = (ButtonCode) configuration.clickCode;
+        _swipeUpCode = (ButtonCode) configuration.swipeUpCode;
+        _swipeDownCode = (ButtonCode) configuration.swipeDownCode;
 
         self.clickAction = clickAction;
         self.longClickAction = longClickAction;
         self.swipeUpAction = swipeUpAction;
         self.swipeDownAction = swipeDownAction;
-        [self setupListener];
+        [self setupListenerWithConfiguration:configuration];
         LongClickDuration = [[NSBundle bundleForClass:[self class]].infoDictionary[@"SCMCLongClickDuration"] doubleValue];
     }
 
     return self;
 }
 
-+ (instancetype)listenerWithClickAction:(SCMCAction)clickAction longClickAction:(SCMCAction)longClickAction swipeUpAction:(SCMCAction)swipeUpAction swipeDownAction:(SCMCAction)swipeDownAction {
-    return [[self alloc] initWithClickAction:clickAction longClickAction:longClickAction swipeUpAction:swipeUpAction swipeDownAction:swipeDownAction];
++ (instancetype)listenerWithConfiguration:(SCMCConfiguration *)configuration clickAction:(SCMCAction)clickAction longClickAction:(SCMCAction)longClickAction swipeUpAction:(SCMCAction)swipeUpAction swipeDownAction:(SCMCAction)swipeDownAction {
+    return [[self alloc] initWithConfiguration:configuration clickAction:clickAction longClickAction:longClickAction swipeUpAction:swipeUpAction swipeDownAction:swipeDownAction];
 }
 
-- (void)setupListener {
+- (void)setupListenerWithConfiguration:(SCMCConfiguration *)configuration {
     IOHIDManagerRef hidManager = IOHIDManagerCreate(kCFAllocatorDefault, kIOHIDOptionsTypeNone);
     NSDictionary *sculptComfortMatch = @{
-            @kIOHIDVendorIDKey : [SCMCConfiguration sharedInstance].vendorId,
-            @kIOHIDProductIDKey : [SCMCConfiguration sharedInstance].productId,
+            @kIOHIDVendorIDKey : configuration.vendorId,
+            @kIOHIDProductIDKey : configuration.productId,
     };
 
     IOHIDManagerSetDeviceMatching(hidManager, (__bridge CFDictionaryRef) sculptComfortMatch);

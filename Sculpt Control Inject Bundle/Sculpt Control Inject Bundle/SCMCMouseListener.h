@@ -8,10 +8,12 @@
 
 #import <Foundation/Foundation.h>
 
+@class SCMCConfiguration;
+
 typedef void(^SCMCAction)(void);
 
 @interface SCMCMouseListener : NSObject
 
-+ (instancetype)listenerWithClickAction:(SCMCAction)clickAction longClickAction:(SCMCAction)longClickAction swipeUpAction:(SCMCAction)swipeUpAction swipeDownAction:(SCMCAction)swipeDownAction;
++ (instancetype)listenerWithConfiguration:(SCMCConfiguration *)configuration clickAction:(SCMCAction)clickAction longClickAction:(SCMCAction)longClickAction swipeUpAction:(SCMCAction)swipeUpAction swipeDownAction:(SCMCAction)swipeDownAction;
 
 @end
