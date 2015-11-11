@@ -10,6 +10,9 @@
 
 static NSString *const RootKey = @"scmc";
 
+static NSString *const VendorIdKey = @"vendor-id";
+static NSString *const ProductIdKey = @"product-id";
+
 @implementation SCMCConfiguration
 
 static NSDictionary *Configuration(void) {
@@ -19,6 +22,8 @@ static NSDictionary *Configuration(void) {
 + (void)load {
     [[NSUserDefaults standardUserDefaults] registerDefaults:@{
         RootKey : @{
+            VendorIdKey : @0x45E,
+            ProductIdKey : @0x7A2,
         },
     }];
 }
@@ -30,6 +35,16 @@ static NSDictionary *Configuration(void) {
         singleton = [SCMCConfiguration new];
     });
     return singleton;
+}
+
+#pragma mark - Properties
+
+- (NSNumber *)vendorId {
+    return Configuration()[VendorIdKey];
+}
+
+- (NSNumber *)productId {
+    return Configuration()[ProductIdKey];
 }
 
 @end

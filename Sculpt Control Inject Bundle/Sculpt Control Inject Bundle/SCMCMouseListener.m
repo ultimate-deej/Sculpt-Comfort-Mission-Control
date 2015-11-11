@@ -7,6 +7,7 @@
 //
 
 #import "SCMCMouseListener.h"
+#import "SCMCConfiguration.h"
 
 @import IOKit.hid;
 
@@ -117,8 +118,8 @@ static void MouseCallback(void *context, IOReturn result, void *sender, IOHIDVal
 - (void)setupListener {
     IOHIDManagerRef hidManager = IOHIDManagerCreate(kCFAllocatorDefault, kIOHIDOptionsTypeNone);
     NSDictionary *sculptComfortMatch = @{
-            @kIOHIDVendorIDKey : @0x45E,
-            @kIOHIDProductIDKey : @0x7A2,
+            @kIOHIDVendorIDKey : [SCMCConfiguration sharedInstance].vendorId,
+            @kIOHIDProductIDKey : [SCMCConfiguration sharedInstance].productId,
     };
 
     IOHIDManagerSetDeviceMatching(hidManager, (__bridge CFDictionaryRef) sculptComfortMatch);
