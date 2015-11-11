@@ -44,14 +44,14 @@ static void HandleLongClick(__weak SCMCMouseListener *listener, BOOL down) {
         LongClickTimer = nil;
 
         if (ClickState == DownLongClickState) {
-            listener.clickAction();
+            if (listener.clickAction) listener.clickAction();
         }
 
         ClickState = IdleLongClickState;
     } else if (ClickState == IdleLongClickState) {
         LongClickTimer = [NSTimer scheduledTimerWithTimeInterval:LongClickDuration
                 target:[NSBlockOperation blockOperationWithBlock:^{
-                    listener.longClickAction();
+                    if (listener.longClickAction) listener.longClickAction();
                     ClickState = WaitingReleaseLongClickState;
                 }]
                 selector:@selector(main)
@@ -76,9 +76,9 @@ static void MouseCallback(void *context, IOReturn result, void *sender, IOHIDVal
     if (pressed != 1) return;
 
     if (code == listener->_swipeUpCode) {
-        listener.swipeUpAction();
+        if (listener.swipeUpAction) listener.swipeUpAction();
     } else if (code == listener->_swipeDownCode) {
-        listener.swipeDownAction();
+        if (listener.swipeDownAction) listener.swipeDownAction();
     }
 }
 
