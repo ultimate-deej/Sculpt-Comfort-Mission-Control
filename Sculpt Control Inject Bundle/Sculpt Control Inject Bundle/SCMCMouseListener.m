@@ -96,7 +96,7 @@ static void MouseCallback(void *context, IOReturn result, void *sender, IOHIDVal
 
 @implementation SCMCMouseListener
 
-- (instancetype)initWithClickAction:(void (^)())clickAction longClickAction:(void (^)())longClickAction swipeUpAction:(void (^)())swipeUpAction swipeDownAction:(void (^)())swipeDownAction {
+- (instancetype)initWithClickAction:(SCMCAction)clickAction longClickAction:(SCMCAction)longClickAction swipeUpAction:(SCMCAction)swipeUpAction swipeDownAction:(SCMCAction)swipeDownAction {
     self = [super init];
     if (self) {
         self.clickAction = clickAction;
@@ -110,7 +110,7 @@ static void MouseCallback(void *context, IOReturn result, void *sender, IOHIDVal
     return self;
 }
 
-+ (instancetype)listenerWithClickAction:(void (^)())clickAction longClickAction:(void (^)())longClickAction swipeUpAction:(void (^)())swipeUpAction swipeDownAction:(void (^)())swipeDownAction {
++ (instancetype)listenerWithClickAction:(SCMCAction)clickAction longClickAction:(SCMCAction)longClickAction swipeUpAction:(SCMCAction)swipeUpAction swipeDownAction:(SCMCAction)swipeDownAction {
     return [[self alloc] initWithClickAction:clickAction longClickAction:longClickAction swipeUpAction:swipeUpAction swipeDownAction:swipeDownAction];
 }
 
