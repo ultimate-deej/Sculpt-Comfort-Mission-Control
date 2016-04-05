@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		171C1C531CB3FB7000312C82 /* SCMCHidMouseListener.m in Sources */ = {isa = PBXBuildFile; fileRef = 171C1C521CB3FB7000312C82 /* SCMCHidMouseListener.m */; };
 		17D3F8831BF2BA5300C7EB97 /* SCMCActions.m in Sources */ = {isa = PBXBuildFile; fileRef = 17D3F8821BF2BA5300C7EB97 /* SCMCActions.m */; };
 		17D3F8861BF37E7E00C7EB97 /* SCMCConfiguration.m in Sources */ = {isa = PBXBuildFile; fileRef = 17D3F8851BF37E7E00C7EB97 /* SCMCConfiguration.m */; };
 		17F4D2181B5090060060D8A4 /* SCMCInjector.m in Sources */ = {isa = PBXBuildFile; fileRef = 17F4D2171B5090060060D8A4 /* SCMCInjector.m */; };
@@ -14,6 +15,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		171C1C511CB3FB7000312C82 /* SCMCHidMouseListener.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCMCHidMouseListener.h; sourceTree = "<group>"; };
+		171C1C521CB3FB7000312C82 /* SCMCHidMouseListener.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCMCHidMouseListener.m; sourceTree = "<group>"; };
 		17D3F8811BF2BA5300C7EB97 /* SCMCActions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCMCActions.h; sourceTree = "<group>"; };
 		17D3F8821BF2BA5300C7EB97 /* SCMCActions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCMCActions.m; sourceTree = "<group>"; };
 		17D3F8841BF37E7E00C7EB97 /* SCMCConfiguration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCMCConfiguration.h; sourceTree = "<group>"; };
@@ -63,6 +66,8 @@
 				17F4D2171B5090060060D8A4 /* SCMCInjector.m */,
 				17F4D21C1B5098770060D8A4 /* SCMCMouseListener.h */,
 				17F4D21D1B5098770060D8A4 /* SCMCMouseListener.m */,
+				171C1C511CB3FB7000312C82 /* SCMCHidMouseListener.h */,
+				171C1C521CB3FB7000312C82 /* SCMCHidMouseListener.m */,
 				17D3F8811BF2BA5300C7EB97 /* SCMCActions.h */,
 				17D3F8821BF2BA5300C7EB97 /* SCMCActions.m */,
 				17D3F8841BF37E7E00C7EB97 /* SCMCConfiguration.h */,
@@ -149,6 +154,7 @@
 				17F4D21E1B5098770060D8A4 /* SCMCMouseListener.m in Sources */,
 				17D3F8831BF2BA5300C7EB97 /* SCMCActions.m in Sources */,
 				17F4D2181B5090060060D8A4 /* SCMCInjector.m in Sources */,
+				171C1C531CB3FB7000312C82 /* SCMCHidMouseListener.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
