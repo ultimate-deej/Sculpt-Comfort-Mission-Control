@@ -12,6 +12,10 @@
 
 typedef void(^SCMCAction)(void);
 
+typedef NS_ENUM(NSInteger, ListenerKind) {
+    HidListenerKind,
+};
+
 @interface SCMCMouseListener : NSObject
 
 + (instancetype)listenerWithConfiguration:(SCMCConfiguration *)configuration;

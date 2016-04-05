@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "SCMCActions.h"
+#import "SCMCMouseListener.h"
 
 @interface SCMCConfiguration : NSObject
 
@@ -15,6 +16,8 @@
 - (instancetype)init NS_UNAVAILABLE;
 
 - (instancetype)initWithActions:(SCMCActions *)actions;
+
+@property(nonatomic, readonly) ListenerKind listenerKind;
 
 @property(nonatomic, readonly) NSNumber *vendorId;
 @property(nonatomic, readonly) NSNumber *productId;

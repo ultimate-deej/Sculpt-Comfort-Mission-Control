@@ -10,6 +10,10 @@
 
 static NSString *const RootKey = @"scmc";
 
+static NSString *const ListenerKindKey = @"method";
+
+static NSString *const HidListenerKindName = @"hid";
+
 static NSString *const VendorIdKey = @"vendor-id";
 static NSString *const ProductIdKey = @"product-id";
 
@@ -43,6 +47,8 @@ static NSDictionary *Configuration(void) {
 + (void)load {
     [[NSUserDefaults standardUserDefaults] registerDefaults:@{
         RootKey : @{
+            ListenerKindKey : HidListenerKindName,
+
             VendorIdKey : @0x45E,
             ProductIdKey : @0x7A2,
 
@@ -73,6 +79,10 @@ static NSDictionary *Configuration(void) {
 }
 
 #pragma mark - Properties
+
+- (ListenerKind)listenerKind {
+    return HidListenerKind;
+}
 
 - (NSNumber *)vendorId {
     return Configuration()[VendorIdKey];
