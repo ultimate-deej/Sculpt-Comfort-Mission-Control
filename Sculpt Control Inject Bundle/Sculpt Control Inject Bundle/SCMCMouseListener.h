@@ -14,6 +14,7 @@ typedef void(^SCMCAction)(void);
 
 typedef NS_ENUM(NSInteger, ListenerKind) {
     HidListenerKind,
+    EventTapListenerKind,
 };
 
 @interface SCMCMouseListener : NSObject

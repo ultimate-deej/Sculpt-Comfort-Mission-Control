@@ -9,10 +9,12 @@
 #import "SCMCMouseListener.h"
 #import "SCMCConfiguration.h"
 #import "SCMCHidMouseListener.h"
+#import "SCMCEventTapMouseListener.h"
 
 @implementation SCMCMouseListener
 
 + (instancetype)listenerWithConfiguration:(SCMCConfiguration *)configuration {
+    if (configuration.listenerKind == EventTapListenerKind) return [SCMCEventTapMouseListener listenerWithConfiguration:configuration];
     return [SCMCHidMouseListener listenerWithConfiguration:configuration];
 }
 

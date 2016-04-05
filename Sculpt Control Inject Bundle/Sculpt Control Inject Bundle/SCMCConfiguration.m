@@ -13,6 +13,7 @@ static NSString *const RootKey = @"scmc";
 static NSString *const ListenerKindKey = @"method";
 
 static NSString *const HidListenerKindName = @"hid";
+static NSString *const EventTapListenerKindName = @"event-tap";
 
 static NSString *const VendorIdKey = @"vendor-id";
 static NSString *const ProductIdKey = @"product-id";
@@ -81,6 +82,10 @@ static NSDictionary *Configuration(void) {
 #pragma mark - Properties
 
 - (ListenerKind)listenerKind {
+    NSString *name = Configuration()[ListenerKindKey];
+    if ([name isEqualToString:EventTapListenerKindName]) {
+        return EventTapListenerKind;
+    }
     return HidListenerKind;
 }
 
