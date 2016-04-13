@@ -34,8 +34,6 @@ static BOOL InjectWithTimeout(NSTimeInterval timeout) {
 }
 
 int main(int argc, const char *argv[]) {
-    NSApplicationLoad(); // Just to show dock icon
-
     int retryCount = 4;
     NSTimeInterval retryInterval = 10;
     NSTimeInterval retryIntervalIncrement = 15;
@@ -49,6 +47,4 @@ int main(int argc, const char *argv[]) {
     alert.messageText = @"Could not start";
     [alert runModal];
     return 1;
-
-    // Now that the app is closed ApplicationDiedInterceptor is triggered
 }

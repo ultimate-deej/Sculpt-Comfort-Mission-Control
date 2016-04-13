@@ -18,6 +18,4 @@
 
 - (BOOL)switchToPreviousSpace:(BOOL)arg;
 
-- (void)applicationDied:(int)arg;
-
 @end
