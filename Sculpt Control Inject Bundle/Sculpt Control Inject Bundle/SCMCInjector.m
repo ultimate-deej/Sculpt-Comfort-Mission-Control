@@ -12,35 +12,45 @@
 #import "SCMCActions.h"
 #import "SCMCConfiguration.h"
 #import <objc/runtime.h>
+#import <malloc/malloc.h>
 
 static SCMCMouseListener *MouseListener;
 
-static void (*ApplicationDied_orig)(id<WVSpaces> self, SEL _cmd, int arg);
+static void SpacesFinderEnumeratorBody(__unused task_t task, id<WVSpaces> *result, __unused unsigned type, vm_range_t *ranges, unsigned numberOfRanges) {
+    if (*result != nil) return; // how to interrupt enumeration properly?
 
-static void ApplicationDiedInterceptor(id<WVSpaces> self, SEL _cmd, int arg) {
-    ApplicationDied_orig(self, _cmd, arg);
-
-    // self is the desired instance of WVSpaces
-    // Use it to create a mouse listener
-    SCMCActions *actions = [[SCMCActions alloc] initWithSpaces:self];
-    SCMCConfiguration *configuration = [[SCMCConfiguration alloc] initWithActions:actions];
-    MouseListener = [SCMCMouseListener listenerWithConfiguration:configuration];
-
-    // Restore applicationDied: method
     Class spacesClass = objc_getClass(SPACES_CLASS_NAME);
-    Method applicationDiedMethod = class_getInstanceMethod(spacesClass, @selector(applicationDied:));
-    method_setImplementation(applicationDiedMethod, (IMP) ApplicationDied_orig);
-    ApplicationDied_orig = NULL;
+    size_t spacesInstanceSize = class_getInstanceSize(spacesClass);
+
+    for (unsigned i = 0; i < numberOfRanges; i++) {
+        vm_range_t range = ranges[i];
+        if (range.size < spacesInstanceSize) continue;
+
+        void *maybeObject = (void *) range.address;
+        if (spacesClass == object_getClass((__bridge id) maybeObject)) {
+            *result = (__bridge id<WVSpaces>) maybeObject;
+            return;
+        }
+    }
+}
+
+static id<WVSpaces> FindSpacesInstance(void) {
+    id<WVSpaces> result = nil;
+
+    vm_address_t zoneAddress = (vm_address_t) malloc_default_zone();
+    vm_range_recorder_t *rangeRecorder = (vm_range_recorder_t *) &SpacesFinderEnumeratorBody;
+    malloc_default_zone()->introspect->enumerator(0, &result, MALLOC_PTR_IN_USE_RANGE_TYPE, zoneAddress, 0, *rangeRecorder);
+
+    return result;
 }
 
 @implementation SCMCInjector
 
-// Install ApplicationDiedInterceptor
 + (void)load {
-    Class spacesClass = objc_getClass(SPACES_CLASS_NAME);
-    Method applicationDiedMethod = class_getInstanceMethod(spacesClass, @selector(applicationDied:));
-    ApplicationDied_orig = (typeof(ApplicationDied_orig)) method_getImplementation(applicationDiedMethod);
-    ApplicationDied_orig = (typeof(ApplicationDied_orig)) method_setImplementation(applicationDiedMethod, (IMP) ApplicationDiedInterceptor);
+    id<WVSpaces> spaces = FindSpacesInstance();
+    SCMCActions *actions = [[SCMCActions alloc] initWithSpaces:spaces];
+    SCMCConfiguration *configuration = [[SCMCConfiguration alloc] initWithActions:actions];
+    MouseListener = [SCMCMouseListener listenerWithConfiguration:configuration];
 }
 
 @end
