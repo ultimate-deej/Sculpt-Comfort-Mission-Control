@@ -6,7 +6,6 @@
 //  Copyright (c) 2015 Maxim Naumov. All rights reserved.
 //
 
-#import "SCMCInjector.h"
 #import "WVSpaces.h"
 #import "SCMCMouseListener.h"
 #import "SCMCActions.h"
@@ -44,13 +43,10 @@ static id<WVSpaces> FindSpacesInstance(void) {
     return result;
 }
 
-@implementation SCMCInjector
-
-+ (void)load {
+__attribute__((constructor))
+static void StartMouseListener(void) {
     id<WVSpaces> spaces = FindSpacesInstance();
     SCMCActions *actions = [[SCMCActions alloc] initWithSpaces:spaces];
     SCMCConfiguration *configuration = [[SCMCConfiguration alloc] initWithActions:actions];
     MouseListener = [SCMCMouseListener listenerWithConfiguration:configuration];
 }
-
-@end

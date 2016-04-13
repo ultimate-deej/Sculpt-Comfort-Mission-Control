@@ -26,7 +26,6 @@
 		17D3F8851BF37E7E00C7EB97 /* SCMCConfiguration.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCMCConfiguration.m; sourceTree = "<group>"; };
 		17F4D1FF1B506C8D0060D8A4 /* Sculpt Control Inject Bundle.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Sculpt Control Inject Bundle.bundle"; sourceTree = BUILT_PRODUCTS_DIR; };
 		17F4D2031B506C8D0060D8A4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		17F4D2161B5090060060D8A4 /* SCMCInjector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCMCInjector.h; sourceTree = "<group>"; };
 		17F4D2171B5090060060D8A4 /* SCMCInjector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCMCInjector.m; sourceTree = "<group>"; };
 		17F4D2191B5090560060D8A4 /* WVSpaces.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WVSpaces.h; sourceTree = "<group>"; };
 		17F4D21C1B5098770060D8A4 /* SCMCMouseListener.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCMCMouseListener.h; sourceTree = "<group>"; };
@@ -65,7 +64,6 @@
 			children = (
 				17F4D2021B506C8D0060D8A4 /* Supporting Files */,
 				17F4D2191B5090560060D8A4 /* WVSpaces.h */,
-				17F4D2161B5090060060D8A4 /* SCMCInjector.h */,
 				17F4D2171B5090060060D8A4 /* SCMCInjector.m */,
 				17F4D21C1B5098770060D8A4 /* SCMCMouseListener.h */,
 				17F4D21D1B5098770060D8A4 /* SCMCMouseListener.m */,
