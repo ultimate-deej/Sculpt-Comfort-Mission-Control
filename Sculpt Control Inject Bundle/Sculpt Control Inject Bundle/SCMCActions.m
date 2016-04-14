@@ -48,14 +48,16 @@
 }
 
 - (SCMCAction)nextSpace {
+    WVSpaces *spaces = self.spaces;
     return ^{
-        [self.spaces switchToNextSpace:YES];
+        [spaces switchToNextSpace:YES];
     };
 }
 
 - (SCMCAction)previousSpace {
+    WVSpaces *spaces = self.spaces;
     return ^{
-        [self.spaces switchToPreviousSpace:YES];
+        [spaces switchToPreviousSpace:YES];
     };
 }
 
