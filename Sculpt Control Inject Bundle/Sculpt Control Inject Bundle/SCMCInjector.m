@@ -15,9 +15,9 @@
 
 static SCMCMouseListener *MouseListener;
 
-static void (*ApplicationDied_orig)(WVSpaces *self, SEL _cmd, int arg);
+static void (*ApplicationDied_orig)(id<WVSpaces> self, SEL _cmd, int arg);
 
-static void ApplicationDiedInterceptor(WVSpaces *self, SEL _cmd, int arg) {
+static void ApplicationDiedInterceptor(id<WVSpaces> self, SEL _cmd, int arg) {
     ApplicationDied_orig(self, _cmd, arg);
 
     // self is the desired instance of WVSpaces
@@ -27,7 +27,7 @@ static void ApplicationDiedInterceptor(WVSpaces *self, SEL _cmd, int arg) {
     MouseListener = [SCMCMouseListener listenerWithConfiguration:configuration];
 
     // Restore applicationDied: method
-    Class spacesClass = objc_getClass("WVSpaces");
+    Class spacesClass = objc_getClass(SPACES_CLASS_NAME);
     Method applicationDiedMethod = class_getInstanceMethod(spacesClass, @selector(applicationDied:));
     method_setImplementation(applicationDiedMethod, (IMP) ApplicationDied_orig);
     ApplicationDied_orig = NULL;
@@ -37,7 +37,7 @@ static void ApplicationDiedInterceptor(WVSpaces *self, SEL _cmd, int arg) {
 
 // Install ApplicationDiedInterceptor
 + (void)load {
-    Class spacesClass = objc_getClass("WVSpaces");
+    Class spacesClass = objc_getClass(SPACES_CLASS_NAME);
     Method applicationDiedMethod = class_getInstanceMethod(spacesClass, @selector(applicationDied:));
     ApplicationDied_orig = (typeof(ApplicationDied_orig)) method_getImplementation(applicationDiedMethod);
     ApplicationDied_orig = (typeof(ApplicationDied_orig)) method_setImplementation(applicationDiedMethod, (IMP) ApplicationDiedInterceptor);

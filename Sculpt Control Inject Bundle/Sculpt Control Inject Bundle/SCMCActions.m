@@ -11,13 +11,13 @@
 
 @interface SCMCActions ()
 
-@property(weak, nonatomic, readonly) WVSpaces *spaces;
+@property(weak, nonatomic, readonly) id<WVSpaces> spaces;
 
 @end
 
 @implementation SCMCActions
 
-- (instancetype)initWithSpaces:(__weak WVSpaces *)spaces {
+- (instancetype)initWithSpaces:(__weak id<WVSpaces>)spaces {
     if (nil == (self = [super init])) return nil;
 
     _spaces = spaces;
@@ -48,14 +48,14 @@
 }
 
 - (SCMCAction)nextSpace {
-    WVSpaces *spaces = self.spaces;
+    id<WVSpaces> spaces = self.spaces;
     return ^{
         [spaces switchToNextSpace:YES];
     };
 }
 
 - (SCMCAction)previousSpace {
-    WVSpaces *spaces = self.spaces;
+    id<WVSpaces> spaces = self.spaces;
     return ^{
         [spaces switchToPreviousSpace:YES];
     };

@@ -8,10 +8,11 @@
 
 #import <Cocoa/Cocoa.h>
 
-#pragma clang diagnostic push
-#pragma ide diagnostic ignored "InterfaceHasNoImplementation"
+#define SPACES_CLASS_NAME (NSProcessInfo.processInfo.operatingSystemVersion.minorVersion < 12 \
+    ? "WVSpaces" \
+    : "_TtC4Dock6Spaces")
 
-@interface WVSpaces : NSObject
+@protocol WVSpaces
 
 - (BOOL)switchToNextSpace:(BOOL)arg;
 
@@ -20,5 +21,3 @@
 - (void)applicationDied:(int)arg;
 
 @end
-
-#pragma clang diagnostic pop

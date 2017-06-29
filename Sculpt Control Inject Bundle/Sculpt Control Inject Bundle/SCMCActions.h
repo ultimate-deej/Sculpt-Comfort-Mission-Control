@@ -15,7 +15,7 @@
 + (instancetype)new NS_UNAVAILABLE;
 - (instancetype)init NS_UNAVAILABLE;
 
-- (instancetype)initWithSpaces:(__weak WVSpaces *)spaces;
+- (instancetype)initWithSpaces:(__weak id<WVSpaces>)spaces;
 
 @property(nonatomic, readonly) SCMCAction missionControl;
 @property(nonatomic, readonly) SCMCAction applicationWindows;
