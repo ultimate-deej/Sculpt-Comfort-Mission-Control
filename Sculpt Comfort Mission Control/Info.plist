@@ -27,7 +27,7 @@
 	<key>LSMinimumSystemVersion</key>
 	<string>$(MACOSX_DEPLOYMENT_TARGET)</string>
 	<key>NSHumanReadableCopyright</key>
-	<string>Copyright © 2015 Maxim Naumov. All rights reserved.</string>
+	<string>Copyright © 2015-2017 Maxim Naumov. All rights reserved.</string>
 	<key>NSPrincipalClass</key>
 	<string>NSApplication</string>
 </dict>
