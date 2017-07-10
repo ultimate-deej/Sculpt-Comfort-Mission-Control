@@ -57,5 +57,5 @@ static void StartMouseListener(void) {
     SCMCActions *actions = [[SCMCActions alloc] initWithSpaces:spaces];
     SCMCConfiguration *configuration = [[SCMCConfiguration alloc] initWithActions:actions];
     MouseListener = [SCMCMouseListener listenerWithConfiguration:configuration];
-    ShowNotification();
+    if (configuration.showInjectNotification) ShowNotification();
 }

@@ -33,6 +33,8 @@ static NSString *const ShowDesktopActionName = @"show-desktop";
 static NSString *const NextSpaceActionName = @"next-space";
 static NSString *const PreviousSpaceActionName = @"previous-space";
 
+static NSString *const ShowInjectNotificationKey = @"show-inject-notification";
+
 @interface SCMCConfiguration ()
 
 @property(nonatomic, readonly) NSDictionary *actionsByName;
@@ -61,6 +63,8 @@ static NSDictionary *Configuration(void) {
             LongClickActionKey : ApplicationWindowsActionName,
             SwipeUpActionKey : NextSpaceActionName,
             SwipeDownActionKey : PreviousSpaceActionName,
+
+            ShowInjectNotificationKey : @YES,
         },
     }];
 }
@@ -127,6 +131,14 @@ static NSDictionary *Configuration(void) {
 - (SCMCAction)swipeDownAction {
     NSString *actionName = Configuration()[SwipeDownActionKey];
     return self.actionsByName[actionName];
+}
+
+- (BOOL)showInjectNotification {
+    NSNumber *configValue = Configuration()[ShowInjectNotificationKey];
+    if (configValue) {
+        return [configValue boolValue];
+    }
+    return YES;
 }
 
 @end

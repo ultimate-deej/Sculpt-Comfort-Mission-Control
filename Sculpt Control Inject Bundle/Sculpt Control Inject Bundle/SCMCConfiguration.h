@@ -31,4 +31,6 @@
 @property(nonatomic, readonly) SCMCAction swipeUpAction;
 @property(nonatomic, readonly) SCMCAction swipeDownAction;
 
+@property(nonatomic, readonly) BOOL showInjectNotification;
+
 @end
