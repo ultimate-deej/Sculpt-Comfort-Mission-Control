@@ -43,10 +43,19 @@ static id<WVSpaces> FindSpacesInstance(void) {
     return result;
 }
 
+static void ShowNotification(void) {
+    NSUserNotification *notification = [NSUserNotification new];
+    notification.title = @"Dock";
+    notification.informativeText = @"SCMC bundle loaded successfully";
+
+    [NSUserNotificationCenter.defaultUserNotificationCenter deliverNotification:notification];
+}
+
 __attribute__((constructor))
 static void StartMouseListener(void) {
     id<WVSpaces> spaces = FindSpacesInstance();
     SCMCActions *actions = [[SCMCActions alloc] initWithSpaces:spaces];
     SCMCConfiguration *configuration = [[SCMCConfiguration alloc] initWithActions:actions];
     MouseListener = [SCMCMouseListener listenerWithConfiguration:configuration];
+    ShowNotification();
 }
