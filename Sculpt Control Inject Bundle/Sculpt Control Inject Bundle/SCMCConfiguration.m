@@ -37,13 +37,13 @@ static NSString *const ShowInjectNotificationKey = @"show-inject-notification";
 
 @interface SCMCConfiguration ()
 
-@property(nonatomic, readonly) NSDictionary *actionsByName;
+@property(nonatomic, readonly) NSDictionary<NSString *, SCMCAction> *actionsByName;
 
 @end
 
 @implementation SCMCConfiguration
 
-static NSDictionary *Configuration(void) {
+static NSDictionary<NSString *, id> *Configuration(void) {
     return [[NSUserDefaults standardUserDefaults] valueForKey:RootKey];
 }
 
