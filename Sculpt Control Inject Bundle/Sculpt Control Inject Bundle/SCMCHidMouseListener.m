@@ -6,10 +6,10 @@
 //  Copyright © 2016 Maxim Naumov. All rights reserved.
 //
 
+@import IOKit.hid;
+
 #import "SCMCHidMouseListener.h"
 #import "SCMCConfiguration.h"
-
-@import IOKit.hid;
 
 typedef uint32_t ButtonCode;
 
@@ -83,8 +83,7 @@ static void MouseCallback(void *context, IOReturn result, void *sender, IOHIDVal
 }
 
 - (instancetype)initWithConfiguration:(SCMCConfiguration *)configuration {
-    self = [super init];
-    if (self) {
+    if (self = [super init]) {
         _clickCode = (ButtonCode) configuration.clickCode;
         _swipeUpCode = (ButtonCode) configuration.swipeUpCode;
         _swipeDownCode = (ButtonCode) configuration.swipeDownCode;
@@ -95,7 +94,7 @@ static void MouseCallback(void *context, IOReturn result, void *sender, IOHIDVal
         self.swipeDownAction = configuration.swipeDownAction;
         
         [self setupListenerWithConfiguration:configuration];
-        LongClickDuration = [[NSBundle bundleForClass:[self class]].infoDictionary[@"SCMCLongClickDuration"] doubleValue];
+        LongClickDuration = [[NSBundle bundleForClass:self.class].infoDictionary[@"SCMCLongClickDuration"] doubleValue];
     }
 
     return self;

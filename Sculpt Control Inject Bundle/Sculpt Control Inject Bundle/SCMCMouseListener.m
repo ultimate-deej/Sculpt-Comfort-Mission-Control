@@ -14,8 +14,11 @@
 @implementation SCMCMouseListener
 
 + (instancetype)listenerWithConfiguration:(SCMCConfiguration *)configuration {
-    if (configuration.listenerKind == EventTapListenerKind) return [SCMCEventTapMouseListener listenerWithConfiguration:configuration];
-    return [SCMCHidMouseListener listenerWithConfiguration:configuration];
+    if (configuration.listenerKind == EventTapListenerKind) {
+        return [SCMCEventTapMouseListener listenerWithConfiguration:configuration];
+    } else {
+        return [SCMCHidMouseListener listenerWithConfiguration:configuration];
+    }
 }
 
 @end

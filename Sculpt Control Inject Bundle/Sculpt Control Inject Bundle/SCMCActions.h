@@ -6,9 +6,11 @@
 //  Copyright (c) 2015 Maxim Naumov. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
-#import "WVSpaces.h"
+@import Foundation;
+
 #import "SCMCMouseListener.h"
+
+@protocol WVSpaces;
 
 @interface SCMCActions : NSObject
 

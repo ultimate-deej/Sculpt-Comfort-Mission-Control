@@ -45,7 +45,7 @@ static NSString *const ShowInjectNotificationKey = @"show-inject-notification";
 @implementation SCMCConfiguration
 
 + (void)load {
-    [[NSUserDefaults standardUserDefaults] registerDefaults:@{
+    [NSUserDefaults.standardUserDefaults registerDefaults:@{
         RootKey : @{
             ListenerKindKey : HidListenerKindName,
 
@@ -67,16 +67,16 @@ static NSString *const ShowInjectNotificationKey = @"show-inject-notification";
 }
 
 - (instancetype)initWithActions:(SCMCActions *)actions {
-    if (nil == (self = [super init])) return nil;
-
-    _rawConfiguration = [[NSUserDefaults standardUserDefaults] valueForKey:RootKey];
-    _actionsByName = @{
-        MissionControlActionName : actions.missionControl,
-        ApplicationWindowsActionName : actions.applicationWindows,
-        ShowDesktopActionName : actions.showDesktop,
-        NextSpaceActionName : actions.nextSpace,
-        PreviousSpaceActionName : actions.previousSpace,
-    };
+    if (self = [super init]) {
+        _rawConfiguration = [NSUserDefaults.standardUserDefaults valueForKey:RootKey];
+        _actionsByName = @{
+            MissionControlActionName : actions.missionControl,
+            ApplicationWindowsActionName : actions.applicationWindows,
+            ShowDesktopActionName : actions.showDesktop,
+            NextSpaceActionName : actions.nextSpace,
+            PreviousSpaceActionName : actions.previousSpace,
+        };
+    }
 
     return self;
 }
@@ -84,7 +84,7 @@ static NSString *const ShowInjectNotificationKey = @"show-inject-notification";
 #pragma mark - Properties
 
 - (ListenerKind)listenerKind {
-    NSString *name = _rawConfiguration[ListenerKindKey];
+    NSString *name = self.rawConfiguration[ListenerKindKey];
     if ([name isEqualToString:EventTapListenerKindName]) {
         return EventTapListenerKind;
     }
@@ -92,49 +92,49 @@ static NSString *const ShowInjectNotificationKey = @"show-inject-notification";
 }
 
 - (NSNumber *)vendorId {
-    return _rawConfiguration[VendorIdKey];
+    return self.rawConfiguration[VendorIdKey];
 }
 
 - (NSNumber *)productId {
-    return _rawConfiguration[ProductIdKey];
+    return self.rawConfiguration[ProductIdKey];
 }
 
 - (NSInteger)clickCode {
-    return [_rawConfiguration[ClickCodeKey] integerValue];
+    return [self.rawConfiguration[ClickCodeKey] integerValue];
 }
 
 - (NSInteger)swipeUpCode {
-    return [_rawConfiguration[SwipeUpCodeKey] integerValue];
+    return [self.rawConfiguration[SwipeUpCodeKey] integerValue];
 }
 
 - (NSInteger)swipeDownCode {
-    return [_rawConfiguration[SwipeDownCodeKey] integerValue];
+    return [self.rawConfiguration[SwipeDownCodeKey] integerValue];
 }
 
 - (SCMCAction)clickAction {
-    NSString *actionName = _rawConfiguration[ClickActionKey];
+    NSString *actionName = self.rawConfiguration[ClickActionKey];
     return self.actionsByName[actionName];
 }
 
 - (SCMCAction)longClickAction {
-    NSString *actionName = _rawConfiguration[LongClickActionKey];
+    NSString *actionName = self.rawConfiguration[LongClickActionKey];
     return self.actionsByName[actionName];
 }
 
 - (SCMCAction)swipeUpAction {
-    NSString *actionName = _rawConfiguration[SwipeUpActionKey];
+    NSString *actionName = self.rawConfiguration[SwipeUpActionKey];
     return self.actionsByName[actionName];
 }
 
 - (SCMCAction)swipeDownAction {
-    NSString *actionName = _rawConfiguration[SwipeDownActionKey];
+    NSString *actionName = self.rawConfiguration[SwipeDownActionKey];
     return self.actionsByName[actionName];
 }
 
 - (BOOL)showInjectNotification {
-    NSNumber *configValue = _rawConfiguration[ShowInjectNotificationKey];
+    NSNumber *configValue = self.rawConfiguration[ShowInjectNotificationKey];
     if (configValue) {
-        return [configValue boolValue];
+        return configValue.boolValue;
     }
     return YES;
 }

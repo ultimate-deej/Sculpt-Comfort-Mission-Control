@@ -91,8 +91,7 @@ static CGEventRef MouseCallback(CGEventTapProxy proxy, CGEventType type, CGEvent
 }
 
 - (instancetype)initWithConfiguration:(SCMCConfiguration *)configuration {
-    self = [super init];
-    if (self) {
+    if (self = [super init]) {
         _clickCode = (ButtonCode) configuration.clickCode;
         _swipeUpCode = (ButtonCode) configuration.swipeUpCode;
         _swipeDownCode = (ButtonCode) configuration.swipeDownCode;
@@ -102,7 +101,7 @@ static CGEventRef MouseCallback(CGEventTapProxy proxy, CGEventType type, CGEvent
         self.swipeUpAction = configuration.swipeUpAction;
         self.swipeDownAction = configuration.swipeDownAction;
         
-        LongClickDuration = [[NSBundle bundleForClass:[self class]].infoDictionary[@"SCMCLongClickDuration"] doubleValue];
+        LongClickDuration = [[NSBundle bundleForClass:self.class].infoDictionary[@"SCMCLongClickDuration"] doubleValue];
         [self startListener];
     }
 

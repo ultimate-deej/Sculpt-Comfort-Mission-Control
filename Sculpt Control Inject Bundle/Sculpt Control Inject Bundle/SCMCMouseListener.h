@@ -6,7 +6,7 @@
 //  Copyright (c) 2015 Maxim Naumov. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+@import Foundation;
 
 @class SCMCConfiguration;
 

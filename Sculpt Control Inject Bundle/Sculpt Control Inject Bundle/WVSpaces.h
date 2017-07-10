@@ -6,7 +6,7 @@
 //  Copyright (c) 2015 Maxim Naumov. All rights reserved.
 //
 
-#import <Cocoa/Cocoa.h>
+@import Foundation;
 
 #define SPACES_CLASS_NAME (NSProcessInfo.processInfo.operatingSystemVersion.minorVersion < 12 \
     ? "WVSpaces" \
@@ -15,7 +15,6 @@
 @protocol WVSpaces
 
 - (BOOL)switchToNextSpace:(BOOL)arg;
-
 - (BOOL)switchToPreviousSpace:(BOOL)arg;
 
 @end

@@ -6,12 +6,13 @@
 //  Copyright (c) 2015 Maxim Naumov. All rights reserved.
 //
 
+@import ObjectiveC.runtime;
+@import Darwin.malloc;
+
 #import "WVSpaces.h"
 #import "SCMCMouseListener.h"
 #import "SCMCActions.h"
 #import "SCMCConfiguration.h"
-#import <objc/runtime.h>
-#import <malloc/malloc.h>
 
 static SCMCMouseListener *MouseListener;
 
@@ -38,7 +39,7 @@ static id<WVSpaces> FindSpacesInstance(void) {
 
     vm_address_t zoneAddress = (vm_address_t) malloc_default_zone();
     vm_range_recorder_t *rangeRecorder = (vm_range_recorder_t *) &SpacesFinderEnumeratorBody;
-    malloc_default_zone()->introspect->enumerator(0, &result, MALLOC_PTR_IN_USE_RANGE_TYPE, zoneAddress, 0, *rangeRecorder);
+    malloc_default_zone()->introspect->enumerator(0, &result, MALLOC_PTR_IN_USE_RANGE_TYPE, zoneAddress, NULL, *rangeRecorder);
 
     return result;
 }
@@ -57,5 +58,6 @@ static void StartMouseListener(void) {
     SCMCActions *actions = [[SCMCActions alloc] initWithSpaces:spaces];
     SCMCConfiguration *configuration = [[SCMCConfiguration alloc] initWithActions:actions];
     MouseListener = [SCMCMouseListener listenerWithConfiguration:configuration];
+
     if (configuration.showInjectNotification) ShowNotification();
 }

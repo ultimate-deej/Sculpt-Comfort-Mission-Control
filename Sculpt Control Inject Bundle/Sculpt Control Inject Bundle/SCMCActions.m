@@ -6,6 +6,8 @@
 //  Copyright (c) 2015 Maxim Naumov. All rights reserved.
 //
 
+@import AppKit;
+
 #import "SCMCActions.h"
 #import "WVSpaces.h"
 
@@ -18,32 +20,32 @@
 @implementation SCMCActions
 
 - (instancetype)initWithSpaces:(__weak id<WVSpaces>)spaces {
-    if (nil == (self = [super init])) return nil;
-
-    _spaces = spaces;
+    if (self = [super init]) {
+        _spaces = spaces;
+    }
 
     return self;
 }
 
 - (SCMCAction)missionControl {
     return ^{
-        [[NSWorkspace sharedWorkspace] launchApplication:@"Mission Control"];
+        [NSWorkspace.sharedWorkspace launchApplication:@"Mission Control"];
     };
 }
 
 - (SCMCAction)applicationWindows {
     return ^{
-        NSString *missionControlPath = [[NSWorkspace sharedWorkspace] fullPathForApplication:@"Mission Control"];
+        NSString *missionControlPath = [NSWorkspace.sharedWorkspace fullPathForApplication:@"Mission Control"];
         NSURL *missionControlUrl = [NSURL fileURLWithPath:missionControlPath];
-        [[NSWorkspace sharedWorkspace] launchApplicationAtURL:missionControlUrl options:NSWorkspaceLaunchDefault configuration:@{NSWorkspaceLaunchConfigurationArguments : @[@"2"]} error:nil];
+        [NSWorkspace.sharedWorkspace launchApplicationAtURL:missionControlUrl options:NSWorkspaceLaunchDefault configuration:@{NSWorkspaceLaunchConfigurationArguments : @[@"2"]} error:nil];
     };
 }
 
 - (SCMCAction)showDesktop {
     return ^{
-        NSString *missionControlPath = [[NSWorkspace sharedWorkspace] fullPathForApplication:@"Mission Control"];
+        NSString *missionControlPath = [NSWorkspace.sharedWorkspace fullPathForApplication:@"Mission Control"];
         NSURL *missionControlUrl = [NSURL fileURLWithPath:missionControlPath];
-        [[NSWorkspace sharedWorkspace] launchApplicationAtURL:missionControlUrl options:NSWorkspaceLaunchDefault configuration:@{NSWorkspaceLaunchConfigurationArguments : @[@"1"]} error:nil];
+        [NSWorkspace.sharedWorkspace launchApplicationAtURL:missionControlUrl options:NSWorkspaceLaunchDefault configuration:@{NSWorkspaceLaunchConfigurationArguments : @[@"1"]} error:nil];
     };
 }
 
