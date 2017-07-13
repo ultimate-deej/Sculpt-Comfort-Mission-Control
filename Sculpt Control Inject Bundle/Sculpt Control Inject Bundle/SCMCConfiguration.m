@@ -47,14 +47,11 @@ static NSString *const ShowInjectNotificationKey = @"show-inject-notification";
 + (void)load {
     [NSUserDefaults.standardUserDefaults registerDefaults:@{
         RootKey : @{
-            ListenerKindKey : HidListenerKindName,
+            ListenerKindKey : EventTapListenerKindName,
 
-            VendorIdKey : @0x45E,
-            ProductIdKey : @0x7A2,
-
-            ClickCodeKey : @64817,
-            SwipeUpCodeKey : @64809,
-            SwipeDownCodeKey : @64816,
+            ClickCodeKey : @2,
+            SwipeUpCodeKey : @4,
+            SwipeDownCodeKey : @3,
 
             ClickActionKey : MissionControlActionName,
             LongClickActionKey : ApplicationWindowsActionName,
