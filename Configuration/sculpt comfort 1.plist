@@ -4,15 +4,17 @@
 <dict>
 	<key>scmc</key>
 	<dict>
-		<key>method</key>
-		<string>event-tap</string>
+		<key>product-id</key>
+		<integer>0x7a2</integer>
+		<key>vendor-id</key>
+		<integer>0x45e</integer>
 
 		<key>click-code</key>
-		<integer>2</integer>
+		<integer>227</integer>
 		<key>swipe-up-code</key>
-		<integer>4</integer>
+		<integer>42</integer>
 		<key>swipe-down-code</key>
-		<integer>3</integer>
+		<integer>43</integer>
 
 		<key>click-action</key>
 		<string>mission-control</string>
