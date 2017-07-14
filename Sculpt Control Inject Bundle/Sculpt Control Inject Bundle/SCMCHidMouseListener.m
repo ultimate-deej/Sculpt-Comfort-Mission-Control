@@ -9,15 +9,10 @@
 @import IOKit.hid;
 
 #import "SCMCHidMouseListener.h"
+#import "SCMCMouseListener+Subclass.h"
 #import "SCMCConfiguration.h"
 
 typedef uint32_t ButtonCode;
-
-typedef NS_ENUM(NSInteger, LongClickState) {
-    IdleLongClickState,
-    DownLongClickState,
-    WaitingReleaseLongClickState,
-};
 
 @interface SCMCHidMouseListener ()
 
@@ -25,42 +20,9 @@ typedef NS_ENUM(NSInteger, LongClickState) {
 @property(nonatomic, readonly) ButtonCode swipeUpCode;
 @property(nonatomic, readonly) ButtonCode swipeDownCode;
 
-@property(nonatomic, copy) SCMCAction clickAction;
-@property(nonatomic, copy) SCMCAction longClickAction;
-@property(nonatomic, copy) SCMCAction swipeUpAction;
-@property(nonatomic, copy) SCMCAction swipeDownAction;
-
 @end
 
 @implementation SCMCHidMouseListener
-
-static LongClickState ClickState;
-static NSTimer *LongClickTimer;
-static NSTimeInterval LongClickDuration;
-
-static void HandleLongClick(__weak SCMCHidMouseListener *listener, BOOL down) {
-    if (!down) { // button released
-        [LongClickTimer invalidate];
-        LongClickTimer = nil;
-
-        if (ClickState == DownLongClickState) {
-            if (listener.clickAction) listener.clickAction();
-        }
-
-        ClickState = IdleLongClickState;
-    } else if (ClickState == IdleLongClickState) {
-        LongClickTimer = [NSTimer scheduledTimerWithTimeInterval:LongClickDuration
-                target:[NSBlockOperation blockOperationWithBlock:^{
-                    if (listener.longClickAction) listener.longClickAction();
-                    ClickState = WaitingReleaseLongClickState;
-                }]
-                selector:@selector(main)
-                userInfo:nil
-                repeats:NO
-        ];
-        ClickState = DownLongClickState;
-    }
-}
 
 static void MouseCallback(void *context, IOReturn result, void *sender, IOHIDValueRef value) {
     SCMCHidMouseListener *listener = (__bridge SCMCHidMouseListener *) (context);
@@ -83,18 +45,12 @@ static void MouseCallback(void *context, IOReturn result, void *sender, IOHIDVal
 }
 
 - (instancetype)initWithConfiguration:(SCMCConfiguration *)configuration {
-    if (self = [super init]) {
+    if (self = [super initWithConfiguration:configuration]) {
         _clickCode = (ButtonCode) configuration.clickCode;
         _swipeUpCode = (ButtonCode) configuration.swipeUpCode;
         _swipeDownCode = (ButtonCode) configuration.swipeDownCode;
 
-        self.clickAction = configuration.clickAction;
-        self.longClickAction = configuration.longClickAction;
-        self.swipeUpAction = configuration.swipeUpAction;
-        self.swipeDownAction = configuration.swipeDownAction;
-        
         [self setupListenerWithConfiguration:configuration];
-        LongClickDuration = [[NSBundle bundleForClass:self.class].infoDictionary[@"SCMCLongClickDuration"] doubleValue];
     }
 
     return self;

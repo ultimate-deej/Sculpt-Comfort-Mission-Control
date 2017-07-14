@@ -57,7 +57,7 @@ static void StartMouseListener(void) {
     id<WVSpaces> spaces = FindSpacesInstance();
     SCMCActions *actions = [[SCMCActions alloc] initWithSpaces:spaces];
     SCMCConfiguration *configuration = [[SCMCConfiguration alloc] initWithActions:actions];
-    MouseListener = [SCMCMouseListener listenerWithConfiguration:configuration];
+    MouseListener = [SCMCMouseListener createListenerForConfiguration:configuration];
 
     if (configuration.showInjectNotification) ShowNotification();
 }

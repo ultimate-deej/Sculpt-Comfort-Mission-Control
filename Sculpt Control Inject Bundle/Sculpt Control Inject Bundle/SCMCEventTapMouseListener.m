@@ -7,15 +7,10 @@
 //
 
 #import "SCMCEventTapMouseListener.h"
+#import "SCMCMouseListener+Subclass.h"
 #import "SCMCConfiguration.h"
 
 typedef int64_t ButtonCode;
-
-typedef NS_ENUM(NSInteger, LongClickState) {
-    IdleLongClickState,
-    DownLongClickState,
-    WaitingReleaseLongClickState,
-};
 
 @interface SCMCEventTapMouseListener ()
 
@@ -23,50 +18,9 @@ typedef NS_ENUM(NSInteger, LongClickState) {
 @property(nonatomic, readonly) ButtonCode swipeUpCode;
 @property(nonatomic, readonly) ButtonCode swipeDownCode;
 
-@property(nonatomic, copy) SCMCAction clickAction;
-@property(nonatomic, copy) SCMCAction longClickAction;
-@property(nonatomic, copy) SCMCAction swipeUpAction;
-@property(nonatomic, copy) SCMCAction swipeDownAction;
-
 @end
 
 @implementation SCMCEventTapMouseListener
-
-static LongClickState ClickState;
-static NSTimer *LongClickTimer;
-static NSTimeInterval LongClickDuration;
-
-static BOOL HandleLongClick(__weak SCMCEventTapMouseListener *listener, BOOL down) {
-    BOOL handled = NO;
-
-    if (!down) { // button released
-        [LongClickTimer invalidate];
-        LongClickTimer = nil;
-
-        if (ClickState == DownLongClickState) {
-            if (listener.clickAction) {
-                listener.clickAction();
-                handled = YES;
-            }
-        }
-
-        ClickState = IdleLongClickState;
-    } else if (ClickState == IdleLongClickState) {
-        LongClickTimer = [NSTimer scheduledTimerWithTimeInterval:LongClickDuration
-                target:[NSBlockOperation blockOperationWithBlock:^{
-                    if (listener.longClickAction) listener.longClickAction();
-                    ClickState = WaitingReleaseLongClickState;
-                }]
-                selector:@selector(main)
-                userInfo:nil
-                repeats:NO
-        ];
-        ClickState = DownLongClickState;
-        if (listener.longClickAction) handled = YES;
-    }
-
-    return handled;
-}
 
 static CGEventRef MouseCallback(CGEventTapProxy proxy, CGEventType type, CGEventRef event, void *refcon) {
     if (type != kCGEventOtherMouseDown && type != kCGEventOtherMouseUp) return event;
@@ -91,17 +45,11 @@ static CGEventRef MouseCallback(CGEventTapProxy proxy, CGEventType type, CGEvent
 }
 
 - (instancetype)initWithConfiguration:(SCMCConfiguration *)configuration {
-    if (self = [super init]) {
+    if (self = [super initWithConfiguration:configuration]) {
         _clickCode = (ButtonCode) configuration.clickCode;
         _swipeUpCode = (ButtonCode) configuration.swipeUpCode;
         _swipeDownCode = (ButtonCode) configuration.swipeDownCode;
 
-        self.clickAction = configuration.clickAction;
-        self.longClickAction = configuration.longClickAction;
-        self.swipeUpAction = configuration.swipeUpAction;
-        self.swipeDownAction = configuration.swipeDownAction;
-        
-        LongClickDuration = [[NSBundle bundleForClass:self.class].infoDictionary[@"SCMCLongClickDuration"] doubleValue];
         [self startListener];
     }
 

@@ -19,6 +19,6 @@ typedef NS_ENUM(NSInteger, ListenerKind) {
 
 @interface SCMCMouseListener : NSObject
 
-+ (instancetype)listenerWithConfiguration:(SCMCConfiguration *)configuration;
++ (instancetype)createListenerForConfiguration:(SCMCConfiguration *)configuration;
 
 @end
