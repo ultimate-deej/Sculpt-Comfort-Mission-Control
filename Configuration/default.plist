@@ -4,26 +4,24 @@
 <dict>
 	<key>scmc</key>
 	<dict>
-		<key>product-id</key>
-		<integer>0x7a2</integer>
-		<key>vendor-id</key>
-		<integer>0x45e</integer>
+		<key>method</key>
+		<string>event-tap</string>
 
 		<key>click-code</key>
-		<integer>64817</integer>
+		<integer>2</integer>
 		<key>swipe-up-code</key>
-		<integer>64809</integer>
+		<integer>3</integer>
 		<key>swipe-down-code</key>
-		<integer>64816</integer>
+		<integer>4</integer>
 
 		<key>click-action</key>
 		<string>mission-control</string>
 		<key>long-click-action</key>
 		<string>application-windows</string>
 		<key>swipe-up-action</key>
-		<string>next-space</string>
-		<key>swipe-down-action</key>
 		<string>previous-space</string>
+		<key>swipe-down-action</key>
+		<string>next-space</string>
 	</dict>
 </dict>
 </plist>

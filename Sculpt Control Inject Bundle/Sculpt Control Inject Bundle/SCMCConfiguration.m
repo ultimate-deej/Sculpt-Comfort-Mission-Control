@@ -50,13 +50,13 @@ static NSString *const ShowInjectNotificationKey = @"show-inject-notification";
             ListenerKindKey : EventTapListenerKindName,
 
             ClickCodeKey : @2,
-            SwipeUpCodeKey : @4,
-            SwipeDownCodeKey : @3,
+            SwipeUpCodeKey : @3,
+            SwipeDownCodeKey : @4,
 
             ClickActionKey : MissionControlActionName,
             LongClickActionKey : ApplicationWindowsActionName,
-            SwipeUpActionKey : NextSpaceActionName,
-            SwipeDownActionKey : PreviousSpaceActionName,
+            SwipeUpActionKey : PreviousSpaceActionName,
+            SwipeDownActionKey : NextSpaceActionName,
 
             ShowInjectNotificationKey : @YES,
         },
