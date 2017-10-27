@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>scmc</key>
+	<dict>
+		<key>product-id</key>
+		<integer>1954</integer>
+		<key>vendor-id</key>
+		<integer>1118</integer>
+		<key>click-code</key>
+		<integer>227</integer>
+		<key>swipe-up-code</key>
+		<integer>5</integer>
+		<key>swipe-down-code</key>
+		<integer>4</integer>
+		<key>click-action</key>
+		<string>mission-control</string>
+		<key>long-click-action</key>
+		<string>application-windows</string>
+		<key>swipe-up-action</key>
+		<string>previous-space</string>
+		<key>swipe-down-action</key>
+		<string>next-space</string>
+	</dict>
+</dict>
+</plist>
