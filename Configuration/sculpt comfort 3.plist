@@ -5,9 +5,9 @@
 	<key>scmc</key>
 	<dict>
 		<key>product-id</key>
-		<integer>1954</integer>
+		<integer>0x7a2</integer>
 		<key>vendor-id</key>
-		<integer>1118</integer>
+		<integer>0x45e</integer>
 		<key>click-code</key>
 		<integer>227</integer>
 		<key>swipe-up-code</key>
