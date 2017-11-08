@@ -8,12 +8,14 @@
 		<integer>0x7a2</integer>
 		<key>vendor-id</key>
 		<integer>0x45e</integer>
+
 		<key>click-code</key>
 		<integer>227</integer>
 		<key>swipe-up-code</key>
 		<integer>5</integer>
 		<key>swipe-down-code</key>
 		<integer>4</integer>
+
 		<key>click-action</key>
 		<string>mission-control</string>
 		<key>long-click-action</key>
