@@ -13,6 +13,7 @@ Available Actions
 * mission-control
 * application-windows
 * show-desktop
+* launchpad
 * next-space
 * previous-space
 

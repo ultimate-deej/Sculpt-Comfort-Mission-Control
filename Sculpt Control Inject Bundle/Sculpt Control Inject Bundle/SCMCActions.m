@@ -49,6 +49,12 @@
     };
 }
 
+- (SCMCAction)launchpad {
+    return ^{
+        [NSWorkspace.sharedWorkspace launchApplication:@"Launchpad"];
+    };
+}
+
 - (SCMCAction)nextSpace {
     id<WVSpaces> spaces = self.spaces;
     return ^{

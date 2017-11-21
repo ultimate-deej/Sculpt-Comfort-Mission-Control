@@ -22,6 +22,7 @@
 @property(nonatomic, readonly) SCMCAction missionControl;
 @property(nonatomic, readonly) SCMCAction applicationWindows;
 @property(nonatomic, readonly) SCMCAction showDesktop;
+@property(nonatomic, readonly) SCMCAction launchpad;
 @property(nonatomic, readonly) SCMCAction nextSpace;
 @property(nonatomic, readonly) SCMCAction previousSpace;
 
