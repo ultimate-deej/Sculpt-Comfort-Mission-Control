@@ -6,14 +6,36 @@
 //  Copyright © 2018 deej. All rights reserved.
 //
 
-@import Foundation;
+@import AppKit;
+
+static NSString *FormatError(NSDictionary<NSString *, id> *error) {
+    NSMutableString *result = [NSMutableString string];
+    for (NSString *key in error) {
+        if (result.length > 0) {
+            [result appendString:@"\n"];
+        }
+        [result appendFormat:@"%@: %@", key, error[key]];
+    }
+    return result;
+}
+
+static void ErrorAlert(NSDictionary<NSString *, id> *error) {
+    // TODO: provide the user with instructions on what to do
+    NSAlert *alert = [NSAlert new];
+    // Make it wider
+    alert.accessoryView = [[NSView alloc] initWithFrame:NSMakeRect(0, 0, 400, 0)];
+    alert.alertStyle = NSAlertStyleCritical;
+    alert.messageText = @"Sculpt Comfort Mission Control";
+    alert.informativeText = FormatError(error);
+    [alert runModal];
+}
 
 int main(int argc, const char * argv[]) {
     NSAppleScript *triggerOsaxScript = [[NSAppleScript alloc] initWithSource:@"tell application \"Dock\" to «event SCMCinjt»"];
     NSDictionary<NSString *, id> *error = nil;
     [triggerOsaxScript executeAndReturnError:&error];
     if (error != nil) {
-        // TODO: show alert
+        ErrorAlert(error);
         return 1;
     } else {
         return 0;
