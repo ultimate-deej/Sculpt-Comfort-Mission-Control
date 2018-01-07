@@ -7,10 +7,26 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		176127EC2002883700A2B1A4 /* Dock Plugin.bundle in Embed Dock Plugin */ = {isa = PBXBuildFile; fileRef = 176127E9200287F500A2B1A4 /* Dock Plugin.bundle */; };
 		179E3E06200274A8000D74C2 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 179E3E05200274A8000D74C2 /* main.m */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		176127E12002875400A2B1A4 /* Embed Dock Plugin */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Dock Plugin";
+			dstSubfolderSpec = 16;
+			files = (
+				176127EC2002883700A2B1A4 /* Dock Plugin.bundle in Embed Dock Plugin */,
+			);
+			name = "Embed Dock Plugin";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		176127E9200287F500A2B1A4 /* Dock Plugin.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = "Dock Plugin.bundle"; sourceTree = BUILT_PRODUCTS_DIR; };
 		179E3DF9200274A8000D74C2 /* Sculpt Comfort Mission Control.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Sculpt Comfort Mission Control.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		179E3E04200274A8000D74C2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		179E3E05200274A8000D74C2 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -27,10 +43,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		176127E5200287E000A2B1A4 /* Dock Plugin */ = {
+			isa = PBXGroup;
+			children = (
+				176127E9200287F500A2B1A4 /* Dock Plugin.bundle */,
+			);
+			name = "Dock Plugin";
+			path = "New Group";
+			sourceTree = "<group>";
+		};
 		179E3DF0200274A8000D74C2 = {
 			isa = PBXGroup;
 			children = (
 				179E3DFB200274A8000D74C2 /* Sources */,
+				176127E5200287E000A2B1A4 /* Dock Plugin */,
 				179E3DFA200274A8000D74C2 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -62,6 +88,7 @@
 				179E3DF5200274A8000D74C2 /* Sources */,
 				179E3DF6200274A8000D74C2 /* Frameworks */,
 				179E3DF7200274A8000D74C2 /* Resources */,
+				176127E12002875400A2B1A4 /* Embed Dock Plugin */,
 			);
 			buildRules = (
 			);
