@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE dictionary SYSTEM "file://localhost/System/Library/DTDs/sdef.dtd">
+<dictionary>
+    <suite name="Loading SCMC Dock Plugin" code="SCMC" description="Contains inject command">
+        <command name="inject scmc" code="SCMCinjt" description="Inject SCMC bundle"/>
+    </suite>
+</dictionary>
