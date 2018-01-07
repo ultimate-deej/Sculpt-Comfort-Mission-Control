@@ -4,4 +4,7 @@
    <FileRef
       location = "group:Loader App/Loader App.xcodeproj">
    </FileRef>
+   <FileRef
+      location = "group:Dock Plugin/Dock Plugin.xcodeproj">
+   </FileRef>
 </Workspace>
