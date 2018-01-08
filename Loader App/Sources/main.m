@@ -9,14 +9,7 @@
 @import AppKit;
 
 static NSString *FormatError(NSDictionary<NSString *, id> *error) {
-    NSMutableString *result = [NSMutableString string];
-    for (NSString *key in error) {
-        if (result.length > 0) {
-            [result appendString:@"\n"];
-        }
-        [result appendFormat:@"%@: %@", key, error[key]];
-    }
-    return result;
+    return error[NSAppleScriptErrorBriefMessage];
 }
 
 static void ErrorAlert(NSDictionary<NSString *, id> *error) {
