@@ -37,6 +37,13 @@ OSErr SCMCLoadDockPlugin(const AppleEvent *event, AppleEvent *reply, long refcon
     NSURL *applicationsUrl = [NSFileManager.defaultManager URLForDirectory:NSApplicationDirectory inDomain:NSLocalDomainMask appropriateForURL:nil create:NO error:nil];
     NSURL *pluginUrl = [applicationsUrl URLByAppendingPathComponent:@"Sculpt Comfort Mission Control.app/Contents/Dock Plugin/Dock Plugin.bundle"];
 
+    NSError *error = nil;
+    if (![pluginUrl checkResourceIsReachableAndReturnError:&error]) {
+        const char *errorText = error.localizedDescription.UTF8String;
+        AEPutParamPtr(reply, keyErrorString, typeUTF8Text, errorText, strlen(errorText));
+        return fnfErr;
+    }
+
     if (!IsPluginSignatureValid(pluginUrl)) {
         const char errorText[] = "Invalid bundle signature";
         AEPutParamPtr(reply, keyErrorString, typeUTF8Text, errorText, sizeof(errorText));
