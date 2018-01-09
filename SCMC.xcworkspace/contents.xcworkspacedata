@@ -11,6 +11,9 @@
       location = "group:Dock Plugin/Dock Plugin.xcodeproj">
    </FileRef>
    <FileRef
+      location = "group:Preference Pane/Preference Pane.xcodeproj">
+   </FileRef>
+   <FileRef
       location = "group:Shared/Shared.xcodeproj">
    </FileRef>
 </Workspace>
