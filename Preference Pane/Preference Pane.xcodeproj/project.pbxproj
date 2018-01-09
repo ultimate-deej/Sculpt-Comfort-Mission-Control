@@ -10,6 +10,7 @@
 		1725BE472004427E00D7A881 /* PreferencePane.h in Headers */ = {isa = PBXBuildFile; fileRef = 1725BE462004427E00D7A881 /* PreferencePane.h */; };
 		1725BE492004427E00D7A881 /* PreferencePane.m in Sources */ = {isa = PBXBuildFile; fileRef = 1725BE482004427E00D7A881 /* PreferencePane.m */; };
 		1725BE4E2004427E00D7A881 /* PreferencePane.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1725BE4C2004427E00D7A881 /* PreferencePane.xib */; };
+		1725BE832004562B00D7A881 /* libSharedWithPrefixedNames.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1725BE842004562B00D7A881 /* libSharedWithPrefixedNames.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -18,6 +19,7 @@
 		1725BE482004427E00D7A881 /* PreferencePane.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PreferencePane.m; sourceTree = "<group>"; };
 		1725BE4D2004427E00D7A881 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/PreferencePane.xib; sourceTree = "<group>"; };
 		1725BE4F2004427E00D7A881 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1725BE842004562B00D7A881 /* libSharedWithPrefixedNames.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libSharedWithPrefixedNames.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -25,6 +27,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1725BE832004562B00D7A881 /* libSharedWithPrefixedNames.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -36,6 +39,7 @@
 			children = (
 				1725BE452004427E00D7A881 /* Sources */,
 				1725BE442004427E00D7A881 /* Products */,
+				1725BE5920044A6B00D7A881 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -56,6 +60,14 @@
 				1725BE4F2004427E00D7A881 /* Info.plist */,
 			);
 			path = Sources;
+			sourceTree = "<group>";
+		};
+		1725BE5920044A6B00D7A881 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1725BE842004562B00D7A881 /* libSharedWithPrefixedNames.a */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -272,6 +284,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "deej.SCMC.Preference-Pane";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				USER_HEADER_SEARCH_PATHS = "$BUILT_PRODUCTS_DIR/usr/**";
 				WRAPPER_EXTENSION = prefPane;
 			};
 			name = Debug;
@@ -288,6 +301,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "deej.SCMC.Preference-Pane";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				USER_HEADER_SEARCH_PATHS = "$BUILT_PRODUCTS_DIR/usr/**";
 				WRAPPER_EXTENSION = prefPane;
 			};
 			name = Release;
