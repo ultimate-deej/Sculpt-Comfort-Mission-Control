@@ -6,11 +6,25 @@
 	objectVersion = 48;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		1725BE89200458BD00D7A881 /* PrefixedNames.h in Headers */ = {isa = PBXBuildFile; fileRef = 1725BE88200458BD00D7A881 /* PrefixedNames.h */; settings = {ATTRIBUTES = (Private, ); }; };
+		1725BE8A200458BF00D7A881 /* PrefixedNames.h in Headers */ = {isa = PBXBuildFile; fileRef = 1725BE88200458BD00D7A881 /* PrefixedNames.h */; settings = {ATTRIBUTES = (Private, ); }; };
+/* End PBXBuildFile section */
+
 /* Begin PBXFileReference section */
+		1725BE722004533700D7A881 /* libSharedWithPrefixedNames.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libSharedWithPrefixedNames.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		1725BE88200458BD00D7A881 /* PrefixedNames.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrefixedNames.h; sourceTree = "<group>"; };
 		172DE2FA20043FAD0069FEBB /* libShared.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libShared.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		1725BE6F2004533700D7A881 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		172DE2F720043FAD0069FEBB /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -33,6 +47,7 @@
 			isa = PBXGroup;
 			children = (
 				172DE2FA20043FAD0069FEBB /* libShared.a */,
+				1725BE722004533700D7A881 /* libSharedWithPrefixedNames.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -40,6 +55,7 @@
 		172DE2FC20043FAD0069FEBB /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				1725BE88200458BD00D7A881 /* PrefixedNames.h */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -47,16 +63,42 @@
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
+		1725BE702004533700D7A881 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1725BE8A200458BF00D7A881 /* PrefixedNames.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		172DE2F820043FAD0069FEBB /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1725BE89200458BD00D7A881 /* PrefixedNames.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
+		1725BE712004533700D7A881 /* SharedWithPrefixedNames */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1725BE782004533800D7A881 /* Build configuration list for PBXNativeTarget "SharedWithPrefixedNames" */;
+			buildPhases = (
+				1725BE6E2004533700D7A881 /* Sources */,
+				1725BE6F2004533700D7A881 /* Frameworks */,
+				1725BE702004533700D7A881 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SharedWithPrefixedNames;
+			productName = SharedPrefixedNames;
+			productReference = 1725BE722004533700D7A881 /* libSharedWithPrefixedNames.a */;
+			productType = "com.apple.product-type.library.static";
+		};
 		172DE2F920043FAD0069FEBB /* Shared */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 172DE30320043FAD0069FEBB /* Build configuration list for PBXNativeTarget "Shared" */;
@@ -83,6 +125,10 @@
 				LastUpgradeCheck = 0920;
 				ORGANIZATIONNAME = deej;
 				TargetAttributes = {
+					1725BE712004533700D7A881 = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+					};
 					172DE2F920043FAD0069FEBB = {
 						CreatedOnToolsVersion = 9.2;
 						ProvisioningStyle = Automatic;
@@ -102,11 +148,19 @@
 			projectRoot = "";
 			targets = (
 				172DE2F920043FAD0069FEBB /* Shared */,
+				1725BE712004533700D7A881 /* SharedWithPrefixedNames */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXSourcesBuildPhase section */
+		1725BE6E2004533700D7A881 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		172DE2F620043FAD0069FEBB /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -117,6 +171,28 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
+		1725BE792004533800D7A881 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				EXECUTABLE_PREFIX = lib;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					PREFIX_NAMES_FOR_PREFERENCE_PANE,
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		1725BE7A2004533800D7A881 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				EXECUTABLE_PREFIX = lib;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
 		172DE30120043FAD0069FEBB /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -241,6 +317,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		1725BE782004533800D7A881 /* Build configuration list for PBXNativeTarget "SharedWithPrefixedNames" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1725BE792004533800D7A881 /* Debug */,
+				1725BE7A2004533800D7A881 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		172DE2F520043FAD0069FEBB /* Build configuration list for PBXProject "Shared" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
