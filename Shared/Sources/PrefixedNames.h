@@ -8,5 +8,7 @@
 
 #ifdef PREFIX_NAMES_FOR_PREFERENCE_PANE
 
+#define PREFIX(name) DeejScmcPreference ## name
+
 
 #endif
