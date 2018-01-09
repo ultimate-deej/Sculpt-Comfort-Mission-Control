@@ -284,7 +284,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "deej.SCMC.Preference-Pane";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				USER_HEADER_SEARCH_PATHS = "$BUILT_PRODUCTS_DIR/usr/**";
+				USER_HEADER_SEARCH_PATHS = $BUILT_PRODUCTS_DIR/libSharedWithPrefixedNames;
 				WRAPPER_EXTENSION = prefPane;
 			};
 			name = Debug;
@@ -301,7 +301,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "deej.SCMC.Preference-Pane";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				USER_HEADER_SEARCH_PATHS = "$BUILT_PRODUCTS_DIR/usr/**";
+				USER_HEADER_SEARCH_PATHS = $BUILT_PRODUCTS_DIR/libSharedWithPrefixedNames;
 				WRAPPER_EXTENSION = prefPane;
 			};
 			name = Release;
