@@ -7,11 +7,23 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		171CFB3B2005538200B7C645 /* SCMCEventSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 171CFB372005538200B7C645 /* SCMCEventSpec.m */; };
+		171CFB3C2005538200B7C645 /* SCMCEventSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 171CFB372005538200B7C645 /* SCMCEventSpec.m */; };
+		171CFB3D2005538200B7C645 /* SCMCConfiguration.m in Sources */ = {isa = PBXBuildFile; fileRef = 171CFB392005538200B7C645 /* SCMCConfiguration.m */; };
+		171CFB3E2005538200B7C645 /* SCMCConfiguration.m in Sources */ = {isa = PBXBuildFile; fileRef = 171CFB392005538200B7C645 /* SCMCConfiguration.m */; };
 		1725BE89200458BD00D7A881 /* PrefixedNames.h in Headers */ = {isa = PBXBuildFile; fileRef = 1725BE88200458BD00D7A881 /* PrefixedNames.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		1725BE8A200458BF00D7A881 /* PrefixedNames.h in Headers */ = {isa = PBXBuildFile; fileRef = 1725BE88200458BD00D7A881 /* PrefixedNames.h */; settings = {ATTRIBUTES = (Private, ); }; };
+		175F4CAE200ADC9800EC8475 /* SCMCConfiguration.h in Headers */ = {isa = PBXBuildFile; fileRef = 171CFB382005538200B7C645 /* SCMCConfiguration.h */; settings = {ATTRIBUTES = (Private, ); }; };
+		175F4CAF200ADC9800EC8475 /* SCMCEventSpec.h in Headers */ = {isa = PBXBuildFile; fileRef = 171CFB3A2005538200B7C645 /* SCMCEventSpec.h */; settings = {ATTRIBUTES = (Private, ); }; };
+		175F4CB0200ADC9900EC8475 /* SCMCConfiguration.h in Headers */ = {isa = PBXBuildFile; fileRef = 171CFB382005538200B7C645 /* SCMCConfiguration.h */; settings = {ATTRIBUTES = (Private, ); }; };
+		175F4CB1200ADC9900EC8475 /* SCMCEventSpec.h in Headers */ = {isa = PBXBuildFile; fileRef = 171CFB3A2005538200B7C645 /* SCMCEventSpec.h */; settings = {ATTRIBUTES = (Private, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		171CFB372005538200B7C645 /* SCMCEventSpec.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SCMCEventSpec.m; sourceTree = "<group>"; };
+		171CFB382005538200B7C645 /* SCMCConfiguration.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SCMCConfiguration.h; sourceTree = "<group>"; };
+		171CFB392005538200B7C645 /* SCMCConfiguration.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SCMCConfiguration.m; sourceTree = "<group>"; };
+		171CFB3A2005538200B7C645 /* SCMCEventSpec.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SCMCEventSpec.h; sourceTree = "<group>"; };
 		1725BE722004533700D7A881 /* libSharedWithPrefixedNames.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libSharedWithPrefixedNames.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		1725BE88200458BD00D7A881 /* PrefixedNames.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrefixedNames.h; sourceTree = "<group>"; };
 		172DE2FA20043FAD0069FEBB /* libShared.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libShared.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -56,6 +68,10 @@
 			isa = PBXGroup;
 			children = (
 				1725BE88200458BD00D7A881 /* PrefixedNames.h */,
+				171CFB382005538200B7C645 /* SCMCConfiguration.h */,
+				171CFB392005538200B7C645 /* SCMCConfiguration.m */,
+				171CFB3A2005538200B7C645 /* SCMCEventSpec.h */,
+				171CFB372005538200B7C645 /* SCMCEventSpec.m */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -68,6 +84,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				1725BE8A200458BF00D7A881 /* PrefixedNames.h in Headers */,
+				175F4CB0200ADC9900EC8475 /* SCMCConfiguration.h in Headers */,
+				175F4CB1200ADC9900EC8475 /* SCMCEventSpec.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -76,6 +94,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				1725BE89200458BD00D7A881 /* PrefixedNames.h in Headers */,
+				175F4CAE200ADC9800EC8475 /* SCMCConfiguration.h in Headers */,
+				175F4CAF200ADC9800EC8475 /* SCMCEventSpec.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -158,6 +178,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				171CFB3E2005538200B7C645 /* SCMCConfiguration.m in Sources */,
+				171CFB3C2005538200B7C645 /* SCMCEventSpec.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -165,6 +187,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				171CFB3D2005538200B7C645 /* SCMCConfiguration.m in Sources */,
+				171CFB3B2005538200B7C645 /* SCMCEventSpec.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -10,5 +10,7 @@
 
 #define PREFIX(name) DeejScmcPreference ## name
 
+#define SCMCConfiguration PREFIX(Configuration)
+#define SCMCEventSpec PREFIX(EventSpec)
 
 #endif
