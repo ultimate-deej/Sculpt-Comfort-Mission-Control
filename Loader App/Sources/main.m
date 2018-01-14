@@ -24,7 +24,9 @@ static void ErrorAlert(NSDictionary<NSString *, id> *error) {
 }
 
 int main(int argc, const char * argv[]) {
-    NSAppleScript *triggerOsaxScript = [[NSAppleScript alloc] initWithSource:@"tell application \"Dock\" to «event SCMCinjt»"];
+    NSURL *dockPluginUrl = [NSBundle.mainBundle.bundleURL URLByAppendingPathComponent:@"Contents/Dock Plugin/Dock Plugin.bundle"];
+    NSString *scriptSource = [NSString stringWithFormat:@"tell application \"Dock\" to «event SCMCinjt» \"%@\"", dockPluginUrl.path];
+    NSAppleScript *triggerOsaxScript = [[NSAppleScript alloc] initWithSource:scriptSource];
     NSDictionary<NSString *, id> *error = nil;
     [triggerOsaxScript executeAndReturnError:&error];
     if (error != nil) {

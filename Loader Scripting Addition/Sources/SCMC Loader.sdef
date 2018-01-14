@@ -2,6 +2,8 @@
 <!DOCTYPE dictionary SYSTEM "file://localhost/System/Library/DTDs/sdef.dtd">
 <dictionary>
     <suite name="Loading SCMC Dock Plugin" code="SCMC" description="Contains inject command">
-        <command name="inject scmc" code="SCMCinjt" description="Inject SCMC bundle"/>
+        <command name="inject scmc" code="SCMCinjt" description="Inject SCMC bundle">
+            <direct-parameter type="text" optional="no" description="bundle path"/>
+        </command>
     </suite>
 </dictionary>
