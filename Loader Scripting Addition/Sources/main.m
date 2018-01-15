@@ -26,7 +26,7 @@ static BOOL IsPluginSignatureValid(NSURL *bundlePath) {
         return NO;
     }
 
-    CFStringRef pluginRequirementString = CFSTR("identifier \"deej.SCMC.Dock-Plugin\" and anchor apple generic and cert leaf[subject.CN] = \"Mac Developer: ultimate.deej@gmail.com (6SLQ78239J)\" and certificate leaf[subject.OU] = X58FT7637Z and certificate 1[field.1.2.840.113635.100.6.2.1]");
+    CFStringRef pluginRequirementString = CFSTR("identifier \"deej.SCMC.Dock-Plugin\" and certificate root = H\"3bbea1421ecbfb0d14919835fe9a9ba78ad3ab80\"");
     SecRequirementCreateWithString(pluginRequirementString, kSecCSDefaultFlags, &requirement);
 
     return (SecStaticCodeCheckValidity(bundleCode, kSecCSDefaultFlags, requirement) == noErr);
