@@ -18,11 +18,39 @@ static void ReleaseRef(void *variableRef) {
 
 #pragma mark -
 
+static NSData *GetTheOnlyCertificateData(SecStaticCodeRef code) {
+    CFDictionaryRef cfSigningInformation = NULL;
+    if (SecCodeCopySigningInformation(code, kSecCSSigningInformation, &cfSigningInformation) != noErr) {
+        return NULL;
+    }
+    NSDictionary<NSString *, id> *signingInformation = CFBridgingRelease(cfSigningInformation);
+
+    NSArray *certificates = signingInformation[(NSString *)kSecCodeInfoCertificates];
+    if (certificates.count != 1) {
+        return NULL;
+    }
+
+    SecCertificateRef certificate = (__bridge SecCertificateRef)certificates.firstObject;
+    return CFBridgingRelease(SecCertificateCopyData(certificate));
+}
+
 static BOOL IsPluginSignatureValid(NSURL *bundlePath) {
+    CFRELEASE_CLEANUP SecStaticCodeRef selfCode = NULL;
     CFRELEASE_CLEANUP SecStaticCodeRef bundleCode = NULL;
     CFRELEASE_CLEANUP SecRequirementRef requirement = NULL;
 
     if (SecStaticCodeCreateWithPath((__bridge CFURLRef)bundlePath, kSecCSDefaultFlags, &bundleCode) != noErr) {
+        return NO;
+    }
+
+    NSURL *selfPath = [NSBundle bundleWithIdentifier:@"deej.SCMC.Loader-Scripting-Addition"].bundleURL;
+    if (SecStaticCodeCreateWithPath((__bridge CFURLRef)selfPath, kSecCSDefaultFlags, &selfCode) != noErr) {
+        return NO;
+    }
+
+    NSData *selfCertificateData = GetTheOnlyCertificateData(selfCode);
+    NSData *bundleCertificateData = GetTheOnlyCertificateData(bundleCode);
+    if (![bundleCertificateData isEqualToData:selfCertificateData]) {
         return NO;
     }
 
