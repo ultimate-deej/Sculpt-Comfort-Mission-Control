@@ -9,7 +9,7 @@
 #ifndef PrefixHeader_pch
 #define PrefixHeader_pch
 
-#ifdef PREFIX_NAMES_FOR_PREFERENCE_PANE
+#ifdef FOR_PREFERENCE_PANE
 #import "PreferencePaneNames.h"
 #endif
 
