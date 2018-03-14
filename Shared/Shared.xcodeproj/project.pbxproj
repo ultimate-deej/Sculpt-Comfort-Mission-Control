@@ -13,6 +13,10 @@
 		171CFB3E2005538200B7C645 /* SCMCConfiguration.m in Sources */ = {isa = PBXBuildFile; fileRef = 171CFB392005538200B7C645 /* SCMCConfiguration.m */; };
 		1725BE89200458BD00D7A881 /* PrefixedNames.h in Headers */ = {isa = PBXBuildFile; fileRef = 1725BE88200458BD00D7A881 /* PrefixedNames.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		1725BE8A200458BF00D7A881 /* PrefixedNames.h in Headers */ = {isa = PBXBuildFile; fileRef = 1725BE88200458BD00D7A881 /* PrefixedNames.h */; settings = {ATTRIBUTES = (Private, ); }; };
+		172B0A1B2059951000C6B521 /* SCMCEventTapListener.h in Headers */ = {isa = PBXBuildFile; fileRef = 172B0A192059951000C6B521 /* SCMCEventTapListener.h */; settings = {ATTRIBUTES = (Private, ); }; };
+		172B0A1C2059951000C6B521 /* SCMCEventTapListener.m in Sources */ = {isa = PBXBuildFile; fileRef = 172B0A1A2059951000C6B521 /* SCMCEventTapListener.m */; };
+		172B0A232059A4A000C6B521 /* SCMCEventTapListener.h in Headers */ = {isa = PBXBuildFile; fileRef = 172B0A192059951000C6B521 /* SCMCEventTapListener.h */; settings = {ATTRIBUTES = (Private, ); }; };
+		172B0A242059A4A200C6B521 /* SCMCEventTapListener.m in Sources */ = {isa = PBXBuildFile; fileRef = 172B0A1A2059951000C6B521 /* SCMCEventTapListener.m */; };
 		1739B869205AE55200910CE7 /* SCMCHidListener.h in Headers */ = {isa = PBXBuildFile; fileRef = 178E95B0205946E500407688 /* SCMCHidListener.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		1739B86A205AE55400910CE7 /* SCMCHidListener.m in Sources */ = {isa = PBXBuildFile; fileRef = 178E95B1205946E500407688 /* SCMCHidListener.m */; };
 		175F4CAE200ADC9800EC8475 /* SCMCConfiguration.h in Headers */ = {isa = PBXBuildFile; fileRef = 171CFB382005538200B7C645 /* SCMCConfiguration.h */; settings = {ATTRIBUTES = (Private, ); }; };
@@ -30,6 +34,8 @@
 		171CFB3A2005538200B7C645 /* SCMCEventSpec.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SCMCEventSpec.h; sourceTree = "<group>"; };
 		1725BE722004533700D7A881 /* libSharedWithPrefixedNames.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libSharedWithPrefixedNames.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		1725BE88200458BD00D7A881 /* PrefixedNames.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrefixedNames.h; sourceTree = "<group>"; };
+		172B0A192059951000C6B521 /* SCMCEventTapListener.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SCMCEventTapListener.h; sourceTree = "<group>"; };
+		172B0A1A2059951000C6B521 /* SCMCEventTapListener.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SCMCEventTapListener.m; sourceTree = "<group>"; };
 		172DE2FA20043FAD0069FEBB /* libShared.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libShared.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		178E95B0205946E500407688 /* SCMCHidListener.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SCMCHidListener.h; sourceTree = "<group>"; };
 		178E95B1205946E500407688 /* SCMCHidListener.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SCMCHidListener.m; sourceTree = "<group>"; };
@@ -80,6 +86,8 @@
 				171CFB372005538200B7C645 /* SCMCEventSpec.m */,
 				178E95B0205946E500407688 /* SCMCHidListener.h */,
 				178E95B1205946E500407688 /* SCMCHidListener.m */,
+				172B0A192059951000C6B521 /* SCMCEventTapListener.h */,
+				172B0A1A2059951000C6B521 /* SCMCEventTapListener.m */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -95,6 +103,7 @@
 				1725BE8A200458BF00D7A881 /* PrefixedNames.h in Headers */,
 				175F4CB0200ADC9900EC8475 /* SCMCConfiguration.h in Headers */,
 				175F4CB1200ADC9900EC8475 /* SCMCEventSpec.h in Headers */,
+				172B0A232059A4A000C6B521 /* SCMCEventTapListener.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -106,6 +115,7 @@
 				178E95B2205946E500407688 /* SCMCHidListener.h in Headers */,
 				175F4CAE200ADC9800EC8475 /* SCMCConfiguration.h in Headers */,
 				175F4CAF200ADC9800EC8475 /* SCMCEventSpec.h in Headers */,
+				172B0A1B2059951000C6B521 /* SCMCEventTapListener.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -188,6 +198,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				172B0A242059A4A200C6B521 /* SCMCEventTapListener.m in Sources */,
 				171CFB3E2005538200B7C645 /* SCMCConfiguration.m in Sources */,
 				1739B86A205AE55400910CE7 /* SCMCHidListener.m in Sources */,
 				171CFB3C2005538200B7C645 /* SCMCEventSpec.m in Sources */,
@@ -198,6 +209,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				172B0A1C2059951000C6B521 /* SCMCEventTapListener.m in Sources */,
 				171CFB3D2005538200B7C645 /* SCMCConfiguration.m in Sources */,
 				178E95B3205946E500407688 /* SCMCHidListener.m in Sources */,
 				171CFB3B2005538200B7C645 /* SCMCEventSpec.m in Sources */,
