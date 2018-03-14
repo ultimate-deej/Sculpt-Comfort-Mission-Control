@@ -32,7 +32,7 @@
 		171CFB382005538200B7C645 /* SCMCConfiguration.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SCMCConfiguration.h; sourceTree = "<group>"; };
 		171CFB392005538200B7C645 /* SCMCConfiguration.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SCMCConfiguration.m; sourceTree = "<group>"; };
 		171CFB3A2005538200B7C645 /* SCMCEventSpec.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SCMCEventSpec.h; sourceTree = "<group>"; };
-		1725BE722004533700D7A881 /* libSharedWithPrefixedNames.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libSharedWithPrefixedNames.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		1725BE722004533700D7A881 /* libSharedForPreferencePane.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libSharedForPreferencePane.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		1725BE88200458BD00D7A881 /* PreferencePaneNames.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PreferencePaneNames.h; sourceTree = "<group>"; };
 		172B0A192059951000C6B521 /* SCMCEventTapListener.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SCMCEventTapListener.h; sourceTree = "<group>"; };
 		172B0A1A2059951000C6B521 /* SCMCEventTapListener.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SCMCEventTapListener.m; sourceTree = "<group>"; };
@@ -72,7 +72,7 @@
 			isa = PBXGroup;
 			children = (
 				172DE2FA20043FAD0069FEBB /* libShared.a */,
-				1725BE722004533700D7A881 /* libSharedWithPrefixedNames.a */,
+				1725BE722004533700D7A881 /* libSharedForPreferencePane.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -124,9 +124,9 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		1725BE712004533700D7A881 /* SharedWithPrefixedNames */ = {
+		1725BE712004533700D7A881 /* SharedForPreferencePane */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 1725BE782004533800D7A881 /* Build configuration list for PBXNativeTarget "SharedWithPrefixedNames" */;
+			buildConfigurationList = 1725BE782004533800D7A881 /* Build configuration list for PBXNativeTarget "SharedForPreferencePane" */;
 			buildPhases = (
 				1725BE6E2004533700D7A881 /* Sources */,
 				1725BE6F2004533700D7A881 /* Frameworks */,
@@ -136,9 +136,9 @@
 			);
 			dependencies = (
 			);
-			name = SharedWithPrefixedNames;
+			name = SharedForPreferencePane;
 			productName = SharedPrefixedNames;
-			productReference = 1725BE722004533700D7A881 /* libSharedWithPrefixedNames.a */;
+			productReference = 1725BE722004533700D7A881 /* libSharedForPreferencePane.a */;
 			productType = "com.apple.product-type.library.static";
 		};
 		172DE2F920043FAD0069FEBB /* Shared */ = {
@@ -190,7 +190,7 @@
 			projectRoot = "";
 			targets = (
 				172DE2F920043FAD0069FEBB /* Shared */,
-				1725BE712004533700D7A881 /* SharedWithPrefixedNames */,
+				1725BE712004533700D7A881 /* SharedForPreferencePane */,
 			);
 		};
 /* End PBXProject section */
@@ -373,7 +373,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		1725BE782004533800D7A881 /* Build configuration list for PBXNativeTarget "SharedWithPrefixedNames" */ = {
+		1725BE782004533800D7A881 /* Build configuration list for PBXNativeTarget "SharedForPreferencePane" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				1725BE792004533800D7A881 /* Debug */,
