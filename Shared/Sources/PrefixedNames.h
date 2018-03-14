@@ -12,5 +12,6 @@
 
 #define SCMCConfiguration PREFIX(Configuration)
 #define SCMCEventSpec PREFIX(EventSpec)
+#define SCMCHidListener PREFIX(HidListener)
 
 #endif

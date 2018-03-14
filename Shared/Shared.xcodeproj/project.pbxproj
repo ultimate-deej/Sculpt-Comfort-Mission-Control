@@ -13,10 +13,14 @@
 		171CFB3E2005538200B7C645 /* SCMCConfiguration.m in Sources */ = {isa = PBXBuildFile; fileRef = 171CFB392005538200B7C645 /* SCMCConfiguration.m */; };
 		1725BE89200458BD00D7A881 /* PrefixedNames.h in Headers */ = {isa = PBXBuildFile; fileRef = 1725BE88200458BD00D7A881 /* PrefixedNames.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		1725BE8A200458BF00D7A881 /* PrefixedNames.h in Headers */ = {isa = PBXBuildFile; fileRef = 1725BE88200458BD00D7A881 /* PrefixedNames.h */; settings = {ATTRIBUTES = (Private, ); }; };
+		1739B869205AE55200910CE7 /* SCMCHidListener.h in Headers */ = {isa = PBXBuildFile; fileRef = 178E95B0205946E500407688 /* SCMCHidListener.h */; settings = {ATTRIBUTES = (Private, ); }; };
+		1739B86A205AE55400910CE7 /* SCMCHidListener.m in Sources */ = {isa = PBXBuildFile; fileRef = 178E95B1205946E500407688 /* SCMCHidListener.m */; };
 		175F4CAE200ADC9800EC8475 /* SCMCConfiguration.h in Headers */ = {isa = PBXBuildFile; fileRef = 171CFB382005538200B7C645 /* SCMCConfiguration.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		175F4CAF200ADC9800EC8475 /* SCMCEventSpec.h in Headers */ = {isa = PBXBuildFile; fileRef = 171CFB3A2005538200B7C645 /* SCMCEventSpec.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		175F4CB0200ADC9900EC8475 /* SCMCConfiguration.h in Headers */ = {isa = PBXBuildFile; fileRef = 171CFB382005538200B7C645 /* SCMCConfiguration.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		175F4CB1200ADC9900EC8475 /* SCMCEventSpec.h in Headers */ = {isa = PBXBuildFile; fileRef = 171CFB3A2005538200B7C645 /* SCMCEventSpec.h */; settings = {ATTRIBUTES = (Private, ); }; };
+		178E95B2205946E500407688 /* SCMCHidListener.h in Headers */ = {isa = PBXBuildFile; fileRef = 178E95B0205946E500407688 /* SCMCHidListener.h */; settings = {ATTRIBUTES = (Private, ); }; };
+		178E95B3205946E500407688 /* SCMCHidListener.m in Sources */ = {isa = PBXBuildFile; fileRef = 178E95B1205946E500407688 /* SCMCHidListener.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +31,8 @@
 		1725BE722004533700D7A881 /* libSharedWithPrefixedNames.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libSharedWithPrefixedNames.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		1725BE88200458BD00D7A881 /* PrefixedNames.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrefixedNames.h; sourceTree = "<group>"; };
 		172DE2FA20043FAD0069FEBB /* libShared.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libShared.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		178E95B0205946E500407688 /* SCMCHidListener.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SCMCHidListener.h; sourceTree = "<group>"; };
+		178E95B1205946E500407688 /* SCMCHidListener.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SCMCHidListener.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +78,8 @@
 				171CFB392005538200B7C645 /* SCMCConfiguration.m */,
 				171CFB3A2005538200B7C645 /* SCMCEventSpec.h */,
 				171CFB372005538200B7C645 /* SCMCEventSpec.m */,
+				178E95B0205946E500407688 /* SCMCHidListener.h */,
+				178E95B1205946E500407688 /* SCMCHidListener.m */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -83,6 +91,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1739B869205AE55200910CE7 /* SCMCHidListener.h in Headers */,
 				1725BE8A200458BF00D7A881 /* PrefixedNames.h in Headers */,
 				175F4CB0200ADC9900EC8475 /* SCMCConfiguration.h in Headers */,
 				175F4CB1200ADC9900EC8475 /* SCMCEventSpec.h in Headers */,
@@ -94,6 +103,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1725BE89200458BD00D7A881 /* PrefixedNames.h in Headers */,
+				178E95B2205946E500407688 /* SCMCHidListener.h in Headers */,
 				175F4CAE200ADC9800EC8475 /* SCMCConfiguration.h in Headers */,
 				175F4CAF200ADC9800EC8475 /* SCMCEventSpec.h in Headers */,
 			);
@@ -179,6 +189,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				171CFB3E2005538200B7C645 /* SCMCConfiguration.m in Sources */,
+				1739B86A205AE55400910CE7 /* SCMCHidListener.m in Sources */,
 				171CFB3C2005538200B7C645 /* SCMCEventSpec.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -188,6 +199,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				171CFB3D2005538200B7C645 /* SCMCConfiguration.m in Sources */,
+				178E95B3205946E500407688 /* SCMCHidListener.m in Sources */,
 				171CFB3B2005538200B7C645 /* SCMCEventSpec.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
