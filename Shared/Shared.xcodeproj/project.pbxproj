@@ -11,8 +11,8 @@
 		171CFB3C2005538200B7C645 /* SCMCEventSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 171CFB372005538200B7C645 /* SCMCEventSpec.m */; };
 		171CFB3D2005538200B7C645 /* SCMCConfiguration.m in Sources */ = {isa = PBXBuildFile; fileRef = 171CFB392005538200B7C645 /* SCMCConfiguration.m */; };
 		171CFB3E2005538200B7C645 /* SCMCConfiguration.m in Sources */ = {isa = PBXBuildFile; fileRef = 171CFB392005538200B7C645 /* SCMCConfiguration.m */; };
-		1725BE89200458BD00D7A881 /* PrefixedNames.h in Headers */ = {isa = PBXBuildFile; fileRef = 1725BE88200458BD00D7A881 /* PrefixedNames.h */; settings = {ATTRIBUTES = (Private, ); }; };
-		1725BE8A200458BF00D7A881 /* PrefixedNames.h in Headers */ = {isa = PBXBuildFile; fileRef = 1725BE88200458BD00D7A881 /* PrefixedNames.h */; settings = {ATTRIBUTES = (Private, ); }; };
+		1725BE89200458BD00D7A881 /* PreferencePaneNames.h in Headers */ = {isa = PBXBuildFile; fileRef = 1725BE88200458BD00D7A881 /* PreferencePaneNames.h */; settings = {ATTRIBUTES = (Private, ); }; };
+		1725BE8A200458BF00D7A881 /* PreferencePaneNames.h in Headers */ = {isa = PBXBuildFile; fileRef = 1725BE88200458BD00D7A881 /* PreferencePaneNames.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		172B0A1B2059951000C6B521 /* SCMCEventTapListener.h in Headers */ = {isa = PBXBuildFile; fileRef = 172B0A192059951000C6B521 /* SCMCEventTapListener.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		172B0A1C2059951000C6B521 /* SCMCEventTapListener.m in Sources */ = {isa = PBXBuildFile; fileRef = 172B0A1A2059951000C6B521 /* SCMCEventTapListener.m */; };
 		172B0A232059A4A000C6B521 /* SCMCEventTapListener.h in Headers */ = {isa = PBXBuildFile; fileRef = 172B0A192059951000C6B521 /* SCMCEventTapListener.h */; settings = {ATTRIBUTES = (Private, ); }; };
@@ -33,9 +33,10 @@
 		171CFB392005538200B7C645 /* SCMCConfiguration.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SCMCConfiguration.m; sourceTree = "<group>"; };
 		171CFB3A2005538200B7C645 /* SCMCEventSpec.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SCMCEventSpec.h; sourceTree = "<group>"; };
 		1725BE722004533700D7A881 /* libSharedWithPrefixedNames.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libSharedWithPrefixedNames.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		1725BE88200458BD00D7A881 /* PrefixedNames.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrefixedNames.h; sourceTree = "<group>"; };
+		1725BE88200458BD00D7A881 /* PreferencePaneNames.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PreferencePaneNames.h; sourceTree = "<group>"; };
 		172B0A192059951000C6B521 /* SCMCEventTapListener.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SCMCEventTapListener.h; sourceTree = "<group>"; };
 		172B0A1A2059951000C6B521 /* SCMCEventTapListener.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SCMCEventTapListener.m; sourceTree = "<group>"; };
+		172B0A202059A38400C6B521 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		172DE2FA20043FAD0069FEBB /* libShared.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libShared.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		178E95B0205946E500407688 /* SCMCHidListener.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SCMCHidListener.h; sourceTree = "<group>"; };
 		178E95B1205946E500407688 /* SCMCHidListener.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SCMCHidListener.m; sourceTree = "<group>"; };
@@ -79,7 +80,8 @@
 		172DE2FC20043FAD0069FEBB /* Sources */ = {
 			isa = PBXGroup;
 			children = (
-				1725BE88200458BD00D7A881 /* PrefixedNames.h */,
+				172B0A202059A38400C6B521 /* PrefixHeader.pch */,
+				1725BE88200458BD00D7A881 /* PreferencePaneNames.h */,
 				171CFB382005538200B7C645 /* SCMCConfiguration.h */,
 				171CFB392005538200B7C645 /* SCMCConfiguration.m */,
 				171CFB3A2005538200B7C645 /* SCMCEventSpec.h */,
@@ -100,7 +102,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1739B869205AE55200910CE7 /* SCMCHidListener.h in Headers */,
-				1725BE8A200458BF00D7A881 /* PrefixedNames.h in Headers */,
+				1725BE8A200458BF00D7A881 /* PreferencePaneNames.h in Headers */,
 				175F4CB0200ADC9900EC8475 /* SCMCConfiguration.h in Headers */,
 				175F4CB1200ADC9900EC8475 /* SCMCEventSpec.h in Headers */,
 				172B0A232059A4A000C6B521 /* SCMCEventTapListener.h in Headers */,
@@ -111,7 +113,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1725BE89200458BD00D7A881 /* PrefixedNames.h in Headers */,
+				1725BE89200458BD00D7A881 /* PreferencePaneNames.h in Headers */,
 				178E95B2205946E500407688 /* SCMCHidListener.h in Headers */,
 				175F4CAE200ADC9800EC8475 /* SCMCConfiguration.h in Headers */,
 				175F4CAF200ADC9800EC8475 /* SCMCEventSpec.h in Headers */,
@@ -279,6 +281,7 @@
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREFIX_HEADER = Sources/PrefixHeader.pch;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
@@ -334,6 +337,7 @@
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = Sources/PrefixHeader.pch;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
