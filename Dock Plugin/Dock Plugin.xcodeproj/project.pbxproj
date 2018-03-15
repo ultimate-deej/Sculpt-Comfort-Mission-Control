@@ -12,6 +12,7 @@
 
 /* Begin PBXFileReference section */
 		1725BE5E20044A7600D7A881 /* libShared.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libShared.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		1739B866205ADA0C00910CE7 /* Dock.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Dock.h; sourceTree = "<group>"; };
 		179E3E2F20028348000D74C2 /* Dock Plugin.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Dock Plugin.bundle"; sourceTree = BUILT_PRODUCTS_DIR; };
 		179E3E3220028348000D74C2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -57,6 +58,7 @@
 			isa = PBXGroup;
 			children = (
 				179E3E3220028348000D74C2 /* Info.plist */,
+				1739B866205ADA0C00910CE7 /* Dock.h */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
