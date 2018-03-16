@@ -28,9 +28,16 @@ static NSString *const PreviousSpaceKey = @"previous-space";
 
 - (instancetype)initPrivate {
     if (self = [super init]) {
+        [self forceInvalidateUserDefaults];
         _userDefaults = [[NSUserDefaults alloc] initWithSuiteName:@"deej.SCMC"];
     }
     return self;
+}
+
+- (void)forceInvalidateUserDefaults {
+    // If you replace the config file, the app will keep reading previous data
+    // This is a workaround for that
+    system("defaults read deej.SCMC");
 }
 
 + (instancetype)configuration {
