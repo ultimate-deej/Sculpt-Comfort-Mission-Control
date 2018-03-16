@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>product-id</key>
+	<integer>0x07A2</integer>
+	<key>vendor-id</key>
+	<integer>0x045E</integer>
+
+	<key>mission-control</key>
+	<dict>
+		<key>type</key>
+		<integer>1</integer>
+		<key>code</key>
+		<integer>227</integer>
+	</dict>
+	<key>application-windows</key>
+	<dict>
+		<key>type</key>
+		<integer>1</integer>
+		<key>code</key>
+		<integer>227</integer>
+		<key>long</key>
+		<true/>
+	</dict>
+	<key>next-space</key>
+	<dict>
+		<key>type</key>
+		<integer>1</integer>
+		<key>code</key>
+		<integer>43</integer>
+	</dict>
+	<key>previous-space</key>
+	<dict>
+		<key>type</key>
+		<integer>1</integer>
+		<key>code</key>
+		<integer>42</integer>
+	</dict>
+</dict>
+</plist>

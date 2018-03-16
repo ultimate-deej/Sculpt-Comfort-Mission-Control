@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>product-id</key>
+	<integer>PID</integer>
+	<key>vendor-id</key>
+	<integer>VID</integer>
+
+	<key>mission-control</key>
+	<dict>
+		<key>type</key><!-- Delete for Event Tap -->
+		<integer>0 for Event Tap, 1 for HID</integer>
+		<key>code</key>
+		<integer>BUTTON CODE (HID usage, or button number for Event Tap)</integer>
+		<key>long</key><!-- Keep for long click, delete or set to false otherwise -->
+		<true/>
+	</dict>
+	<key>application-windows</key>
+	<dict/>
+	<key>show-desktop</key>
+	<dict/>
+	<key>launchpad</key>
+	<dict/>
+	<key>next-space</key>
+	<dict/>
+	<key>previous-space</key>
+	<dict/>
+</dict>
+</plist>
