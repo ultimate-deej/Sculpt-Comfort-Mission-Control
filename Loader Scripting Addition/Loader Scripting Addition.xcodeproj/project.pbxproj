@@ -243,7 +243,6 @@
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Bundles";
 				PRODUCT_BUNDLE_IDENTIFIER = "deej.SCMC.Loader-Scripting-Addition";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
 				WRAPPER_EXTENSION = osax;
 			};
 			name = Debug;
@@ -256,7 +255,6 @@
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Bundles";
 				PRODUCT_BUNDLE_IDENTIFIER = "deej.SCMC.Loader-Scripting-Addition";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
 				WRAPPER_EXTENSION = osax;
 			};
 			name = Release;
