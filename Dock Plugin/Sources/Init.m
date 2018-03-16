@@ -10,6 +10,8 @@
 @import ObjectiveC.runtime;
 
 #import "Dock.h"
+#import "SCMCActions.h"
+#import "SCMCConfiguration.h"
 
 // MARK: - Searching for Required Objects
 
@@ -72,5 +74,7 @@ __attribute__((constructor))
 static void StartCore(void) {
     SearchContext context = MakeSearchContext();
     FindRequiredInstances(&context);
-    // TODO: use found objects
+    SCMCActions *actions = [[SCMCActions alloc] initWithSpaces:context.outSpaces expose:context.outExpose];
+    SCMCConfiguration *configuration = [SCMCConfiguration configuration];
+    // TODO: pull everything together
 }
