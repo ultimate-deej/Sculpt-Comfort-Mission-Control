@@ -12,6 +12,7 @@
 #import "Dock.h"
 #import "SCMCActions.h"
 #import "SCMCConfiguration.h"
+#import "SCMCCore.h"
 
 // MARK: - Searching for Required Objects
 
@@ -70,11 +71,13 @@ static void FindRequiredInstances(SearchContext *const context) {
 
 // MARK: - Initializing
 
+static SCMCCore *Core;
+
 __attribute__((constructor))
 static void StartCore(void) {
     SearchContext context = MakeSearchContext();
     FindRequiredInstances(&context);
     SCMCActions *actions = [[SCMCActions alloc] initWithSpaces:context.outSpaces expose:context.outExpose];
     SCMCConfiguration *configuration = [SCMCConfiguration configuration];
-    // TODO: pull everything together
+    Core = [SCMCCore startWithConfiguration:configuration actions:actions];
 }

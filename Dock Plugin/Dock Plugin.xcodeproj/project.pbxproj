@@ -11,6 +11,8 @@
 		1734B792205B031A006EC5E5 /* SCMCActions.m in Sources */ = {isa = PBXBuildFile; fileRef = 1734B791205B031A006EC5E5 /* SCMCActions.m */; };
 		17354922205AE8F5004923F0 /* Init.m in Sources */ = {isa = PBXBuildFile; fileRef = 17354921205AE8F5004923F0 /* Init.m */; };
 		17BF095F205BD650002E58D9 /* SCMCClickHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 17BF095E205BD650002E58D9 /* SCMCClickHandler.m */; };
+		17BF0967205BDB4C002E58D9 /* SCMCActionStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 17BF0965205BDB4C002E58D9 /* SCMCActionStore.m */; };
+		17BF0968205BDB4C002E58D9 /* SCMCCore.m in Sources */ = {isa = PBXBuildFile; fileRef = 17BF0966205BDB4C002E58D9 /* SCMCCore.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +26,10 @@
 		17BF0956205BBDBA002E58D9 /* SCMCAction.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SCMCAction.h; sourceTree = "<group>"; };
 		17BF095D205BD650002E58D9 /* SCMCClickHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCMCClickHandler.h; sourceTree = "<group>"; };
 		17BF095E205BD650002E58D9 /* SCMCClickHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCMCClickHandler.m; sourceTree = "<group>"; };
+		17BF0963205BDB4C002E58D9 /* SCMCActionStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCMCActionStore.h; sourceTree = "<group>"; };
+		17BF0964205BDB4C002E58D9 /* SCMCCore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCMCCore.h; sourceTree = "<group>"; };
+		17BF0965205BDB4C002E58D9 /* SCMCActionStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCMCActionStore.m; sourceTree = "<group>"; };
+		17BF0966205BDB4C002E58D9 /* SCMCCore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCMCCore.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +80,10 @@
 				1734B791205B031A006EC5E5 /* SCMCActions.m */,
 				17BF095D205BD650002E58D9 /* SCMCClickHandler.h */,
 				17BF095E205BD650002E58D9 /* SCMCClickHandler.m */,
+				17BF0963205BDB4C002E58D9 /* SCMCActionStore.h */,
+				17BF0965205BDB4C002E58D9 /* SCMCActionStore.m */,
+				17BF0964205BDB4C002E58D9 /* SCMCCore.h */,
+				17BF0966205BDB4C002E58D9 /* SCMCCore.m */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -146,6 +156,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				17354922205AE8F5004923F0 /* Init.m in Sources */,
+				17BF0968205BDB4C002E58D9 /* SCMCCore.m in Sources */,
+				17BF0967205BDB4C002E58D9 /* SCMCActionStore.m in Sources */,
 				1734B792205B031A006EC5E5 /* SCMCActions.m in Sources */,
 				17BF095F205BD650002E58D9 /* SCMCClickHandler.m in Sources */,
 			);
