@@ -8,10 +8,10 @@
 
 @import Foundation;
 
+#import "SCMCAction.h"
+
 @protocol SCMCDockSpaces;
 @protocol SCMCDockExpose;
-
-typedef void(^SCMCAction)(void);
 
 NS_ASSUME_NONNULL_BEGIN
 

@@ -20,6 +20,7 @@
 		1739B866205ADA0C00910CE7 /* Dock.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Dock.h; sourceTree = "<group>"; };
 		179E3E2F20028348000D74C2 /* Dock Plugin.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Dock Plugin.bundle"; sourceTree = BUILT_PRODUCTS_DIR; };
 		179E3E3220028348000D74C2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		17BF0956205BBDBA002E58D9 /* SCMCAction.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SCMCAction.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +66,7 @@
 				179E3E3220028348000D74C2 /* Info.plist */,
 				1739B866205ADA0C00910CE7 /* Dock.h */,
 				17354921205AE8F5004923F0 /* Init.m */,
+				17BF0956205BBDBA002E58D9 /* SCMCAction.h */,
 				1734B790205B031A006EC5E5 /* SCMCActions.h */,
 				1734B791205B031A006EC5E5 /* SCMCActions.m */,
 			);
