@@ -23,9 +23,9 @@ typedef void(^SCMCHidListenerCallback)(uint32_t code, BOOL pressed);
 - (instancetype)init NS_UNAVAILABLE;
 + (instancetype)new NS_UNAVAILABLE;
 
-/// @param callback Invoked whenever an appropriate event occurs.
 /// @param acceptedCodes Codes that are allowed to be passed to the callback.
-- (instancetype)initWithCallback:(SCMCHidListenerCallback)callback acceptedCodes:(NSArray<NSNumber *> *)acceptedCodes;
+/// @param callback Invoked whenever an appropriate event occurs.
+- (instancetype)initWithAcceptedCodes:(NSArray<NSNumber *> *)acceptedCodes callback:(SCMCHidListenerCallback)callback;
 
 /// @param match `NSDictionary` containing device matching criteria.
 - (void)startForDeviceMatching:(NSDictionary<NSString *, NSNumber *> *)match;

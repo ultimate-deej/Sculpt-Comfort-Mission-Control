@@ -18,7 +18,7 @@
     CFRunLoopSourceRef _source;
 }
 
-- (instancetype)initWithCallback:(SCMCEventTapListenerCallback)callback acceptedCodes:(NSArray<NSNumber *> *)acceptedCodes {
+- (instancetype)initWithAcceptedCodes:(NSArray<NSNumber *> *)acceptedCodes callback:(SCMCEventTapListenerCallback)callback {
     if (self = [super init]) {
         _callback = callback;
         [self initializeAcceptedCodes:acceptedCodes];

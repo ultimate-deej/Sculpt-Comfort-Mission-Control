@@ -21,9 +21,9 @@ typedef void(^SCMCEventTapListenerCallback)(int64_t code, BOOL pressed);
 - (instancetype)init NS_UNAVAILABLE;
 + (instancetype)new NS_UNAVAILABLE;
 
-/// @param callback Invoked whenever an appropriate event occurs.
 /// @param acceptedCodes Codes that are allowed to be passed to the callback.
-- (instancetype)initWithCallback:(SCMCEventTapListenerCallback)callback acceptedCodes:(NSArray<NSNumber *> *)acceptedCodes;
+/// @param callback Invoked whenever an appropriate event occurs.
+- (instancetype)initWithAcceptedCodes:(NSArray<NSNumber *> *)acceptedCodes callback:(SCMCEventTapListenerCallback)callback;
 
 - (void)start;
 

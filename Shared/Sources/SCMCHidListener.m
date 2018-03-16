@@ -19,8 +19,7 @@
     IOHIDManagerRef _hidManager;
 }
 
-- (instancetype)initWithCallback:(SCMCHidListenerCallback)callback acceptedCodes:(NSArray<NSNumber *> *)acceptedCodes
-{
+- (instancetype)initWithAcceptedCodes:(NSArray<NSNumber *> *)acceptedCodes callback:(SCMCHidListenerCallback)callback {
     if (self = [super init]) {
         _callback = callback;
         [self initializeAcceptedCodes:acceptedCodes];
