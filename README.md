@@ -30,7 +30,7 @@ Although it's a minimal working release which lacks some important features, it 
 - You don't need `lldb` and developer tools
 - Because of the above, it starts much faster. You won't even notice
 - You only need to disable SIP for an initial installation
-- It the app handles a mouse event, other apps don't receive it anymore (with a proper config). With the previous version, it happened for some button configurations. No more unwanted navigation in browsers or wherever else.
+- If the app handles a mouse event, other apps don't receive it anymore (with a proper config). With the previous version, it happened for some button configurations. No more unwanted navigation in browsers or wherever else.
 
 # I need help
 Submit an issue.
