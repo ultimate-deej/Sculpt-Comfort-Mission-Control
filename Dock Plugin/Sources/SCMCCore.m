@@ -44,12 +44,16 @@
     SCMCActionStore *hidActions = [[SCMCActionStore alloc] init];
     SCMCActionStore *eventTapActions = [[SCMCActionStore alloc] init];
 
-    [self putAction:actions.missionControl forEvent:configuration.missionControl toHidActions:hidActions orEventTapActions:eventTapActions];
-    [self putAction:actions.applicationWindows forEvent:configuration.applicationWindows toHidActions:hidActions orEventTapActions:eventTapActions];
-    [self putAction:actions.showDesktop forEvent:configuration.showDesktop toHidActions:hidActions orEventTapActions:eventTapActions];
-    [self putAction:actions.launchpad forEvent:configuration.launchpad toHidActions:hidActions orEventTapActions:eventTapActions];
-    [self putAction:actions.nextSpace forEvent:configuration.nextSpace toHidActions:hidActions orEventTapActions:eventTapActions];
-    [self putAction:actions.previousSpace forEvent:configuration.previousSpace toHidActions:hidActions orEventTapActions:eventTapActions];
+    void (^putAction)(SCMCAction, SCMCEventSpec *) = ^(SCMCAction action, SCMCEventSpec *eventSpec) {
+        [self putAction:action forEvent:eventSpec toHidActions:hidActions orEventTapActions:eventTapActions];
+    };
+
+    putAction(actions.missionControl, configuration.missionControl);
+    putAction(actions.applicationWindows, configuration.applicationWindows);
+    putAction(actions.showDesktop, configuration.showDesktop);
+    putAction(actions.launchpad, configuration.launchpad);
+    putAction(actions.nextSpace, configuration.nextSpace);
+    putAction(actions.previousSpace, configuration.previousSpace);
 
     SCMCClickHandler *clickHandler = self.clickHandler;
 
