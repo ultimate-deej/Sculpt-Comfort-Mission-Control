@@ -1,11 +1,14 @@
 # What is it?
 It's an app that lets you switch between virtual desktops on your Mac. With a mouse! And not only with Sculpt Comfort, any mouse will do. But you really want a mouse with at least two additional buttons.
 
+# Important 10.14 Mojave information
+Due to security enhancements in Mojave, it's not currently possible to use SCMC with SIP enabled. You must keep it disabled to continue using this app.
+
 # Installation
 1. Install Loader. This is probably a one-time setup as this component is unlikely to change soon.
 	1. Disable SIP
 	2. Copy `SCMC Loader.osax` to `/System/Library/ScriptingAdditions`
-	3. Enable SIP
+	3. *[pre-10.14 only]* Enable SIP
 2. Install a config (see [Configuration folder](/Configuration))
 3. Run `Sculpt Comfort Mission Control.app`
 
