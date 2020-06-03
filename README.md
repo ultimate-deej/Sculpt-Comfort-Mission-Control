@@ -1,6 +1,9 @@
 # What is it?
 It's an app that lets you switch between virtual desktops on your Mac. With a mouse! And not only with Sculpt Comfort, any mouse will do. But you really want a mouse with at least two additional buttons.
 
+# Note for Catalina users
+Since SCMC doesn't support Catalina at the moment, you might want to use a solution by [@ephemient](//github.com/ephemient). See [this](//github.com/ultimate-deej/Sculpt-Comfort-Mission-Control/issues/20#issuecomment-638209672) comment.
+
 # Important 10.14 Mojave information
 Due to security enhancements in Mojave, it's not currently possible to use SCMC with SIP enabled. You must keep it disabled to continue using this app.
 
